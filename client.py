@@ -1,6 +1,9 @@
+import sys
+import json
 import time
 from socket import socket, AF_INET, SOCK_STREAM
-from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR
+from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR, DEFAULT_IP_ADDRESS, \
+    DEFAULT_PORT
 from common.utils import get_message, send_message
 
 
@@ -33,11 +36,39 @@ def process_anc(message):
     raise ValueError
 
 
-if __name__ == '__main__':
-    pass
+def main():
+    """
+    загружает параметры командной строки,
+    создаёт сокет, отправляет сообщение серверу и получает ответ
+    :return:
+    """
 
-# CLIENT_SOCK = socket(AF_INET, SOCK_STREAM)
-# CLIENT_SOCK.connect(('localhost', 8888))
-# MESSAGE = CLIENT_SOCK.recv(1024)
-# print(MESSAGE.decode('utf-8'))
-# CLIENT_SOCK.close()
+    # считывание порта и адреса из командной строки
+
+    try:
+        server_address = sys.argv[1]
+        server_port = int(sys.argv[2])
+        if server_port < 1024 or server_port > 65535:
+            raise ValueError
+    except IndexError:
+        server_address = DEFAULT_IP_ADDRESS
+        server_port = DEFAULT_PORT
+    except ValueError:
+        print('Invalid port')
+        sys.exit(1)
+
+    # инициализация сокета и обмен
+
+    transport = socket(AF_INET, SOCK_STREAM)
+    transport.connect((server_address, server_port))
+    message_to_server = create_presence()
+    send_message(transport, message_to_server)
+    try:
+        answer = process_anc(get_message(transport))
+        print(answer)
+    except (ValueError, json.JSONDecodeError):
+        print('Failed to decode')
+
+
+if __name__ == '__main__':
+    main()
