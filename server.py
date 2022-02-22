@@ -52,7 +52,7 @@ def main():
         else:
             listen_address = ''
     except IndexError:
-        print("You didn't specify a ip-address in the parameter field '-p'")
+        print("You didn't specify a ip-address in the parameter field '-a'")
         sys.exit(1)
 
     # инициализация сокета

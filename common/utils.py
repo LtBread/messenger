@@ -26,6 +26,8 @@ def send_message(sock, message):
     :param sock:
     :param message:
     """
+    if not isinstance(message, dict):
+        raise TypeError
     js_message = json.dumps(message)
     encoded_message = js_message.encode(ENCODING)
     sock.send(encoded_message)
