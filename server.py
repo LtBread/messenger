@@ -8,7 +8,7 @@ from common.utils import get_message, send_message
 
 def process_client_message(message):
     """
-    формирует ответ клиенту в виде строки с "кодом ответа сервера"
+    Формирует ответ клиенту в виде строки с "кодом ответа сервера"
     :param message:
     :return:
     """
@@ -23,8 +23,7 @@ def process_client_message(message):
 
 def main():
     """
-    загружает параметры командной строки,
-
+    Загружает параметры командной строки
     :return:
     """
 
