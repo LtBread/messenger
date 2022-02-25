@@ -2,7 +2,7 @@ import sys
 import json
 import logging
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
-
+import logs.server_log_config
 from errors import IncorrectDataRecivedError
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, PRESENCE, TIME, USER, ERROR, \
     DEFAULT_PORT, RESPONDEFAULT_IP_ADDRESSSE
@@ -43,8 +43,9 @@ def main():
             listen_port = DEFAULT_PORT
         if not 1023 < listen_port < 65536:
             raise ValueError(listen_port)
+        SERVER_LOGGER.info(f'Сервер в работе, порт: {listen_port}')
     except IndexError:
-        print("You didn't specify a port in the parameter field '-p'")
+        # print("You didn't specify a port in the parameter field '-p'")
         SERVER_LOGGER.error(f'После параметра "-p" не указан порт. Сервер завершается')
         sys.exit(1)
     except ValueError as e:
@@ -55,10 +56,12 @@ def main():
     try:
         if '-a' in sys.argv:
             listen_address = sys.argv[sys.argv.index('-a') + 1]
+            SERVER_LOGGER.info(f'Сервер в работе, адрес: {listen_address}')
         else:
             listen_address = ''
+            SERVER_LOGGER.info(f'Сервер в работе, слушает всех')
     except IndexError:
-        print("You didn't specify a ip-address in the parameter field '-a'")
+        # print("You didn't specify a ip-address in the parameter field '-a'")
         SERVER_LOGGER.error(f'После параметра "-a" не указан адрес. Сервер завершается')
         sys.exit(1)
 
