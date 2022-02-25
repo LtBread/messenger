@@ -63,8 +63,8 @@ def main():
     except IndexError:
         server_address = DEFAULT_IP_ADDRESS
         server_port = DEFAULT_PORT
-        CLIENT_LOGGER.info(f'Скрипт запущен без одного или нескольких аргументов, '
-                           f'некоторые параметры заданы по умолчанию: {server_address} : {server_port}')
+        # CLIENT_LOGGER.info(f'Скрипт запущен без одного или нескольких аргументов, '
+        #                    f'некоторые параметры заданы по умолчанию: {server_address} : {server_port}')
     except ValueError as e:
         CLIENT_LOGGER.critical(f'Попытка запуска клиента с неподходящим номером порта: {e.args[0]}. Клиент завершается')
         sys.exit(1)

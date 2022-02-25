@@ -2,6 +2,7 @@ import os
 import sys
 import unittest
 
+from errors import ReqFileMissingError
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR
 from client import create_presence, process_anc
 
@@ -27,7 +28,7 @@ class TestClient(unittest.TestCase):
 
     def test_no_response(self):
         """Тест исключения без поля RESPONSE"""
-        self.assertRaises(ValueError, process_anc, {ERROR: 'Bad Request'})
+        self.assertRaises(ReqFileMissingError, process_anc, {ERROR: 'Bad Request'})
 
 
 if __name__ == '__main__':

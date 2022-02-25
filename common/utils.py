@@ -1,6 +1,6 @@
-""" UTILS """
-
 import json
+
+from errors import NonDictInputError
 from common.variables import MAX_PACKAGE_LENGTH, ENCODING
 
 
@@ -16,7 +16,7 @@ def get_message(client):
         response = json.loads(json_response)
         if isinstance(response, dict):
             return response
-        raise ValueError
+        raise NonDictInputError
     raise ValueError
 
 
