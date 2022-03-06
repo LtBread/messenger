@@ -2,8 +2,10 @@ import json
 
 from errors import NonDictInputError
 from common.variables import MAX_PACKAGE_LENGTH, ENCODING
+from logs.utils_log_decorator import log
 
 
+@log
 def get_message(client):
     """
     получает ответ в виде байтов и возвращает в виде словаря
@@ -20,6 +22,7 @@ def get_message(client):
     raise ValueError
 
 
+@log
 def send_message(sock, message):
     """
     отправляет сообщение в виде байтов
