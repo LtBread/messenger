@@ -1,22 +1,52 @@
-2022-02-25 19:00:01,465 CRITICAL server_log_config.py Критическая ошибка
-2022-02-25 19:00:01,465 ERROR server_log_config.py Ошибка
-2022-02-25 19:00:01,465 DEBUG server_log_config.py Отладочная информация
-2022-02-25 19:00:01,465 INFO server_log_config.py Информационное сообщение
-2022-02-25 20:24:38,036 INFO server.py Установлено соединение с ('127.0.0.1', 51357)
-2022-02-25 20:24:38,036 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1645795478.0207224, 'user': {'account_name': 'Guest'}}
-2022-02-25 20:24:38,036 INFO server.py Сформирован ответ клиенту {'response': 200}
-2022-02-25 20:24:38,036 DEBUG server.py Соединение с клиентом ('127.0.0.1', 51357) закрывается
-2022-02-25 20:26:47,283 INFO server.py Установлено соединение с ('127.0.0.1', 51362)
-2022-02-25 20:26:47,283 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1645795607.2839317, 'user': {'account_name': 'Guest'}}
-2022-02-25 20:26:47,283 INFO server.py Сформирован ответ клиенту {'response': 200}
-2022-02-25 20:26:47,283 DEBUG server.py Соединение с клиентом ('127.0.0.1', 51362) закрывается
-2022-02-25 20:45:46,408 ERROR server.py После параметра "-p" не указан порт. Сервер завершается
-2022-02-25 20:45:57,582 INFO server.py Сервер в работе, порт: 7777
-2022-02-25 20:45:57,582 ERROR server.py После параметра "-a" не указан адрес. Сервер завершается
-2022-02-25 20:46:39,657 CRITICAL server.py Попытка запуска сервера с недопустимым портом: 999. Сервер завершается
-2022-02-25 20:46:49,648 INFO server.py Сервер в работе, порт: 9999
-2022-02-25 20:46:49,649 INFO server.py Сервер в работе, слушает всех
-2022-02-25 20:47:07,109 INFO server.py Установлено соединение с ('127.0.0.1', 51430)
-2022-02-25 20:47:07,109 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1645796827.1098692, 'user': {'account_name': 'Guest'}}
-2022-02-25 20:47:07,111 INFO server.py Сформирован ответ клиенту {'response': 200}
-2022-02-25 20:47:07,111 DEBUG server.py Соединение с клиентом ('127.0.0.1', 51430) закрывается
+2022-03-06 11:03:23,626 INFO server.py Сервер в работе, порт: 7777
+2022-03-06 11:03:23,627 INFO server.py Сервер в работе, слушает всех
+2022-03-06 11:03:39,007 INFO server.py Установлено соединение с ('127.0.0.1', 58644)
+2022-03-06 11:05:52,755 INFO server.py Сервер в работе, порт: 7777
+2022-03-06 11:05:52,756 INFO server.py Сервер в работе, слушает всех
+2022-03-06 11:05:56,720 INFO server.py Установлено соединение с ('127.0.0.1', 58797)
+2022-03-06 11:05:56,720 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:05:56,727 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646539556.72002, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:05:56,727 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:05:56,729 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:05:56,730 DEBUG server.py Соединение с клиентом ('127.0.0.1', 58797) закрывается
+2022-03-06 11:06:29,441 INFO server.py Сервер в работе, порт: 7777
+2022-03-06 11:06:29,441 INFO server.py Сервер в работе, слушает всех
+2022-03-06 11:06:32,903 INFO server.py Установлено соединение с ('127.0.0.1', 58836)
+2022-03-06 11:08:01,087 INFO server.py Сервер в работе, порт: 7777
+2022-03-06 11:08:01,087 INFO server.py Сервер в работе, слушает всех
+2022-03-06 11:08:04,816 INFO server.py Установлено соединение с ('127.0.0.1', 58934)
+2022-03-06 11:08:04,817 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:08:04,818 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646539684.816572, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:08:04,820 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:08:04,821 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:08:04,822 DEBUG server.py Соединение с клиентом ('127.0.0.1', 58934) закрывается
+2022-03-06 11:12:54,125 INFO server.py Установлено соединение с ('127.0.0.1', 59252)
+2022-03-06 11:12:54,126 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:12:54,127 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646539974.1256273, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:12:54,130 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:12:54,131 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:12:54,133 DEBUG server.py Соединение с клиентом ('127.0.0.1', 59252) закрывается
+2022-03-06 11:13:32,465 INFO server.py Установлено соединение с ('127.0.0.1', 59293)
+2022-03-06 11:13:32,465 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:13:32,466 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646540012.4643111, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:13:32,469 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:13:32,471 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:13:32,471 DEBUG server.py Соединение с клиентом ('127.0.0.1', 59293) закрывается
+2022-03-06 11:26:16,238 INFO server.py Установлено соединение с ('127.0.0.1', 60199)
+2022-03-06 11:26:16,238 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:26:16,239 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646540776.237521, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:26:16,242 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:26:16,242 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:26:16,243 DEBUG server.py Соединение с клиентом ('127.0.0.1', 60199) закрывается
+2022-03-06 11:26:29,150 INFO server.py Установлено соединение с ('127.0.0.1', 60215)
+2022-03-06 11:26:29,150 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:26:29,155 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646540789.149362, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:26:29,156 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:26:29,157 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:26:29,158 DEBUG server.py Соединение с клиентом ('127.0.0.1', 60215) закрывается
+2022-03-06 11:28:26,745 INFO server.py Установлено соединение с ('127.0.0.1', 60340)
+2022-03-06 11:28:26,745 DEBUG utils_log_config_decorator.py <дата-время> Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:28:26,747 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1646540906.7459228, 'user': {'account_name': 'Guest'}}
+2022-03-06 11:28:26,750 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-06 11:28:26,752 DEBUG utils_log_config_decorator.py <дата-время> Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-06 11:28:26,752 DEBUG server.py Соединение с клиентом ('127.0.0.1', 60340) закрывается
