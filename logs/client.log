@@ -82,3 +82,15 @@
 2022-03-12 10:59:17,696 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
 2022-03-12 10:59:17,696 INFO client.py Принят ответ от сервера: 200 : OK
 2022-03-12 11:10:13,257 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:25:40,944 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:25:40,944 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:25:40,944 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 11:25:40,944 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 11:36:50,761 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:36:50,761 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:36:50,761 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 11:36:50,761 INFO client.py Принят ответ от сервера: 200 : OK

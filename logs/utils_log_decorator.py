@@ -1,7 +1,7 @@
 import sys
 import logging
-import logs.server_log_config
-import logs.client_log_config
+import logs.config_server_log
+import logs.config_client_log
 
 if sys.argv[0].find('client.py') == -1:
     LOGGER = logging.getLogger('server')

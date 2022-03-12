@@ -4,7 +4,7 @@ import time
 import logging
 from socket import socket, AF_INET, SOCK_STREAM
 
-import logs.client_log_config
+import logs.config_client_log
 from errors import ReqFileMissingError
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR, DEFAULT_IP_ADDRESS, \
     DEFAULT_PORT

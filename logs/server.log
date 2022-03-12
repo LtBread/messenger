@@ -10,3 +10,20 @@
 2022-03-12 10:59:17,696 INFO server.py Сформирован ответ клиенту {'response': 200}
 2022-03-12 10:59:17,696 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
 2022-03-12 10:59:17,696 DEBUG server.py Соединение с клиентом ('127.0.0.1', 52290) закрывается
+2022-03-12 11:25:34,178 INFO server.py Сервер в работе, порт: 7777
+2022-03-12 11:25:34,178 INFO server.py Сервер в работе, слушает всех
+2022-03-12 11:25:40,944 INFO server.py Установлено соединение с ('127.0.0.1', 52335)
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 11:25:40,944 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1647059140.9446278, 'user': {'account_name': 'Guest'}}
+2022-03-12 11:25:40,944 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 11:25:40,944 DEBUG server.py Соединение с клиентом ('127.0.0.1', 52335) закрывается
+2022-03-12 11:36:45,823 INFO server.py Сервер в работе, порт: 7777
+2022-03-12 11:36:45,823 INFO server.py Сервер в работе, слушает всех
+2022-03-12 11:36:50,761 INFO server.py Установлено соединение с ('127.0.0.1', 52354)
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 11:36:50,761 DEBUG server.py Получено сообщение {'action': 'presence', 'time': 1647059810.761192, 'user': {'account_name': 'Guest'}}
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 11:36:50,761 INFO server.py Сформирован ответ клиенту {'response': 200}
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 11:36:50,761 DEBUG server.py Соединение с клиентом ('127.0.0.1', 52354) закрывается
