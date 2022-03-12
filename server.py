@@ -149,7 +149,7 @@ def main():
                     TIME: time.time(),
                     MESSAGE_TEXT: messages[0][1]
                 }
-                del message[0]
+                del messages[0]
                 for waiting_client in send_data_list:
                     try:
                         send_message(waiting_client, message)
