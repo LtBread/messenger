@@ -22,9 +22,6 @@ def process_client_message(message, message_list, client):
     """
     Обрабатывает сообщения от клиентов, принимает словарь, проверяет,
     формирует ответ клиенту в виде строки с "кодом ответа сервера"
-    :param message:
-    :param message_list
-    :return:
     """
     LOGGER.debug(f'Разбор сообщения от клиента: {message}')
     # если это сообщение о присутствии, принимает и отвечает
@@ -117,7 +114,7 @@ def main():
         try:
             client, client_address = transport.accept()
         except OSError as e:
-            print(e.errno)  # The error number returns None because it's just a timeout
+            # print(e.errno)  # The error number returns None because it's just a timeout
             """ ТУТ ДОПИЛИТЬ """
             pass
         else:

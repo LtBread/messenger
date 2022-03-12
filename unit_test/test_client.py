@@ -4,7 +4,7 @@ import unittest
 
 from errors import ReqFileMissingError
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR
-from client import create_presence, process_anc
+from client import create_presence, process_response_anc
 
 sys.path.append((os.path.join(os.getcwd(), '..')))
 
@@ -20,15 +20,15 @@ class TestClient(unittest.TestCase):
 
     def test_200_ans(self):
         """Тест корректного разбора ответа 200"""
-        self.assertEqual(process_anc({RESPONSE: 200}), '200 : OK')
+        self.assertEqual(process_response_anc({RESPONSE: 200}), '200 : OK')
 
     def test_400_ans(self):
         """Тест корректного разбора 400"""
-        self.assertEqual(process_anc({RESPONSE: 400, ERROR: 'Bad Request'}), '400 : Bad Request')
+        self.assertEqual(process_response_anc({RESPONSE: 400, ERROR: 'Bad Request'}), '400 : Bad Request')
 
     def test_no_response(self):
         """Тест исключения без поля RESPONSE"""
-        self.assertRaises(ReqFileMissingError, process_anc, {ERROR: 'Bad Request'})
+        self.assertRaises(ReqFileMissingError, process_response_anc, {ERROR: 'Bad Request'})
 
 
 if __name__ == '__main__':

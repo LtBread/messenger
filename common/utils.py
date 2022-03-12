@@ -13,8 +13,6 @@ def get_message(client):
     """
     Получает сообщение в виде байтов и возвращает словарь,
     если получено что-то другое, поднимает ошибку значения
-    :param client:
-    :return: response
     """
     encoded_response = client.recv(MAX_PACKAGE_LENGTH)
     if isinstance(encoded_response, bytes):
@@ -28,11 +26,7 @@ def get_message(client):
 
 @log
 def send_message(sock, message):
-    """
-    Принимает словарь, кодирует и отправляет сообщение в виде байтов
-    :param sock:
-    :param message:
-    """
+    """ Принимает словарь, кодирует и отправляет сообщение в виде байтов """
     if not isinstance(message, dict):
         raise NonDictInputError
     js_message = json.dumps(message)
