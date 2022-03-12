@@ -269,3 +269,5 @@
 2022-03-12 19:08:57,458 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
 2022-03-12 19:08:57,460 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
 2022-03-12 19:08:57,462 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 19:13:13,805 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-12 19:13:13,805 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.

@@ -66,36 +66,6 @@ def main():
         f'если адрес не указан, принимаются соединения с любых адресов.'
     )
 
-    # # считывание порта из командной строки
-    # try:
-    #     if '-p' in sys.argv:
-    #         listen_port = int(sys.argv[sys.argv.index('-p') + 1])
-    #     else:
-    #         listen_port = DEFAULT_PORT
-    #     if not 1023 < listen_port < 65536:
-    #         raise ValueError(listen_port)
-    #     LOGGER.info(f'Сервер в работе, порт: {listen_port}')
-    # except IndexError:
-    #     # print("You didn't specify a port in the parameter field '-p'")
-    #     LOGGER.error(f'После параметра "-p" не указан порт. Сервер завершается')
-    #     sys.exit(1)
-    # except ValueError as e:
-    #     LOGGER.critical(f'Попытка запуска сервера с недопустимым портом: {e.args[0]}. Сервер завершается')
-    #     sys.exit(1)
-    #
-    # # считывание адреса из командной строки
-    # try:
-    #     if '-a' in sys.argv:
-    #         listen_address = sys.argv[sys.argv.index('-a') + 1]
-    #         LOGGER.info(f'Сервер в работе, адрес: {listen_address}')
-    #     else:
-    #         listen_address = ''
-    #         LOGGER.info(f'Сервер в работе, слушает всех')
-    # except IndexError:
-    #     # print("You didn't specify a ip-address in the parameter field '-a'")
-    #     LOGGER.error(f'После параметра "-a" не указан адрес. Сервер завершается')
-    #     sys.exit(1)
-
     # инициализация сокета
     transport = socket(AF_INET, SOCK_STREAM)
     transport.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)  # это чтобы не ждать 3 минуты, пока освободиться порт
@@ -114,7 +84,7 @@ def main():
         try:
             client, client_address = transport.accept()
         except OSError as e:
-            # print(e.errno)  # The error number returns None because it's just a timeout
+            print(e.errno)  # The error number returns None because it's just a timeout
             """ ТУТ ДОПИЛИТЬ """
             pass
         else:
@@ -128,7 +98,8 @@ def main():
         try:
             if clients:
                 recv_data_list, send_data_list, err_list = select.select(clients, clients, [], 0)
-        except OSError:
+        except OSError as e:
+            print(e.errno)  # The error number returns None because it's just a timeout
             """ ТУТ ДОПИЛИТЬ """
             pass
 
@@ -157,20 +128,6 @@ def main():
                         LOGGER.info(f'Клиент {waiting_client.getpeername()} отключился от сервера')
                         waiting_client.close()
                         clients.remove(waiting_client)
-
-    #         message_from_client = get_message(client)
-    #         LOGGER.debug(f'Получено сообщение {message_from_client}')
-    #         # print(message_from_client)
-    #         response = process_client_message(message_from_client)
-    #         LOGGER.info(f'Сформирован ответ клиенту {response}')
-    #         send_message(client, response)
-    #         LOGGER.debug(f'Соединение с клиентом {client_address} закрывается')
-    #         client.close()
-    #     except json.JSONDecodeError:
-    #     LOGGER.error(f'Не удалось декодировать полученную строку JSON, полученную от'
-    #                  f'{client_address}. Соединение закрывается')
-    # except IncorrectDataRecivedError:
-    # LOGGER.error(f'От клиента {client_address} приняты некорректные данные. Соединение закрывается')
 
 
 if __name__ == '__main__':

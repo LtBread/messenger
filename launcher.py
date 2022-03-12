@@ -2,8 +2,8 @@ import subprocess
 
 
 PROCESS = []
-NUM_SENDERS = 2
-NUM_LISTENERS = 3
+NUM_SENDERS = 1
+NUM_LISTENERS = 2
 
 while True:
     ACTION = input('Выберете действие: q - выход, '

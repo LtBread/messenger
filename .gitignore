@@ -1,7 +1,5 @@
-
 .idea/
-
 common/__pycache__/
-
 __pycache__/
-/logs/server.log.2022-03-08
+client_send.py
+
