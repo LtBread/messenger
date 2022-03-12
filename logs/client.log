@@ -64,3 +64,21 @@
 2022-03-06 11:28:26,752 DEBUG utils_log_config_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
 2022-03-06 11:28:26,752 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
 2022-03-06 11:28:26,754 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 10:38:20,637 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,662 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,694 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,709 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:38:20,803 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:39:03,793 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,838 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:39:03,926 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,963 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,994 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:58:50,417 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 10:59:17,680 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 10:59:17,680 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 10:59:17,680 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 10:59:17,696 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 10:59:17,696 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 10:59:17,696 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 11:10:13,257 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
