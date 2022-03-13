@@ -1,5 +1,7 @@
 import sys
 import logging
+import logs.config_server_log
+import logs.config_client_log
 
 if sys.argv[0].find('client.py') == -1:
     LOGGER = logging.getLogger('server')
@@ -8,6 +10,7 @@ else:
 
 
 def log(func_to_log):
+    """Декоратор - фиксирует в лог цепочку вызова функций для скрипта, который эту цепочку построил"""
     def log_saver(*args, **kwargs):
         func = func_to_log(*args, **kwargs)
         LOGGER.debug(f'Функция {func_to_log.__name__} '

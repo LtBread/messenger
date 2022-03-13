@@ -107,22 +107,6 @@ def main():
     LOGGER.info(f'Запущен клиент с параметрами: адрес сервера: {server_address}, '
                 f'порт: {server_port}, режим работы: {client_mode}')
 
-    # # считывание порта и адреса из командной строки
-    # try:
-    #     server_address = sys.argv[1]
-    #     server_port = int(sys.argv[2])
-    #     if not 1023 < server_port < 65536:
-    #         raise ValueError(server_port)
-    #     LOGGER.info(f'Запущен клиент с параметрами: адрес сервера: {server_address}, порт: {server_port}')
-    # except IndexError:
-    #     server_address = DEFAULT_IP_ADDRESS
-    #     server_port = DEFAULT_PORT
-    #     LOGGER.info(f'Скрипт запущен без одного или нескольких аргументов, '
-    #                 f'некоторые параметры заданы по умолчанию: {server_address} : {server_port}')
-    # except ValueError as e:
-    #     LOGGER.critical(f'Попытка запуска клиента с неподходящим номером порта: {e.args[0]}. Клиент завершается')
-    #     sys.exit(1)
-
     # инициализация сокета и обмен
     try:
         transport = socket(AF_INET, SOCK_STREAM)

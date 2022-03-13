@@ -64,3 +64,397 @@
 2022-03-06 11:28:26,752 DEBUG utils_log_config_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
 2022-03-06 11:28:26,752 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
 2022-03-06 11:28:26,754 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 10:38:20,637 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,662 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,694 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:38:20,709 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:38:20,803 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:39:03,793 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,838 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:39:03,926 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,963 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'listen'. Клиент завершается
+2022-03-12 10:39:03,994 CRITICAL client.py Попытка запуска клиента с неподходящим номером порта: invalid literal for int() with base 10: 'send'. Клиент завершается
+2022-03-12 10:58:50,417 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 10:59:17,680 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 10:59:17,680 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 10:59:17,680 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 10:59:17,696 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 10:59:17,696 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 10:59:17,696 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 11:10:13,257 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:25:40,944 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:25:40,944 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:25:40,944 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:25:40,944 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 11:25:40,944 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 11:36:50,761 INFO client.py Скрипт запущен без одного или нескольких аргументов, некоторые параметры заданы по умолчанию: 127.0.0.1 : 7777
+2022-03-12 11:36:50,761 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:36:50,761 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 11:36:50,761 DEBUG client.py Разбор сообщение от сервера: {'response': 200}
+2022-03-12 11:36:50,761 INFO client.py Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:07,086 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:07,086 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:16:07,086 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:07,086 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:07,086 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:07,101 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:07,101 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:07,101 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:07,101 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:58,355 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,359 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 13:16:58,371 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:58,371 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,371 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,378 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,379 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:58,383 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,383 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:58,391 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,392 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:16:58,395 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:58,398 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,403 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,404 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,405 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:16:58,406 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:58,407 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,407 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,408 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:58,408 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,409 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:58,407 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,410 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,410 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:16:58,411 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:58,412 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,412 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,414 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,414 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:58,414 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,419 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:58,457 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,457 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 13:16:58,458 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:16:58,458 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,458 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,459 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,460 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:58,460 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,460 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:16:58,462 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,462 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:16:58,462 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:16:58,462 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:18:26,121 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647065906.1218286, 'account_name': 'Guest', 'message_text': '123'}
+2022-03-12 13:18:26,121 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:18:26,137 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:19:29,299 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647065969.2991705, 'account_name': 'Guest', 'message_text': '123'}
+2022-03-12 13:19:29,299 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:19:29,299 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:19:32,111 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647065972.1119661, 'account_name': 'Guest', 'message_text': 'й'}
+2022-03-12 13:19:32,111 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:19:32,111 ERROR client.py Соединение с сервером 127.0.0.1 неожиданно разорвано
+2022-03-12 13:19:36,331 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647065976.331007, 'account_name': 'Guest', 'message_text': '123'}
+2022-03-12 13:19:36,331 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:19:36,331 ERROR client.py Соединение с сервером 127.0.0.1 неожиданно разорвано
+2022-03-12 13:20:02,485 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,486 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,490 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+
+2022-03-12 13:20:02,581 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,596 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:20:02,596 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:20:02,596 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,596 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,596 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,596 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 13:20:02,596 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:20:02,596 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,596 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 13:20:02,612 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:20:02,612 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:02,612 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:20:03,002 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:20:03,002 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 13:20:03,002 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:03,002 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 13:20:27,930 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647066027.9301002, 'account_name': 'Guest', 'message_text': 'hello'}
+2022-03-12 13:20:27,930 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 13:20:27,930 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,869 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,870 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 14:23:14,871 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:23:14,871 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,871 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,874 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,875 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:23:14,877 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:14,878 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:23:21,084 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:21,084 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 14:23:21,085 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:23:21,085 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:21,085 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:21,089 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:21,089 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:23:21,090 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:21,093 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:23:31,595 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647069811.5957413, 'account_name': 'Guest', 'message_text': 'hello'}
+2022-03-12 14:23:31,596 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:23:31,597 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,910 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,910 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 14:27:41,911 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:27:41,911 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,912 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,915 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,915 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:27:41,916 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:27:41,918 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:27:55,118 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 14:27:55,119 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:27:56,137 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:27:56,147 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:28:09,169 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647070089.1690397, 'account_name': 'Guest', 'message_text': 'hellow'}
+2022-03-12 14:31:37,113 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,113 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 14:31:37,115 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:31:37,116 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,116 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,117 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,117 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 14:31:37,118 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:31:37,118 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,118 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,119 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,119 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:31:37,119 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,119 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:31:37,120 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,120 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:31:37,120 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:37,120 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:31:44,043 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647070304.0434506, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 14:31:44,043 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:31:44,044 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:16,370 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:16,370 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 14:32:16,371 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:32:16,371 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:16,372 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:17,386 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:17,387 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:32:17,396 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 14:32:17,401 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:32:30,426 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 14:32:30,427 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:32:31,443 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:32:31,452 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:33:05,644 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 14:34:48,041 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 14:34:48,042 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:34:48,043 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:34:48,044 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:35:08,833 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 14:35:08,834 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 14:35:08,835 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 14:35:08,835 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 14:35:58,179 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647070558.1792948, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 18:28:28,347 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:28:30,400 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-03-12 18:28:44,906 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:28:44,907 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:28:44,908 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:28:44,908 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:28:50,653 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:28:50,656 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:28:50,656 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:28:50,656 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:28:53,745 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647084533.745931, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 18:29:18,983 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:29:21,001 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-03-12 18:29:22,771 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647084562.771789, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 18:29:37,445 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:29:37,445 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:29:37,447 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:29:37,447 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:29:43,818 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 18:29:46,039 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:29:46,040 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:29:46,042 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:29:46,043 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:29:49,939 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647084589.9399805, 'account_name': 'Guest', 'message_text': 'qwer'}
+2022-03-12 18:31:04,428 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 18:31:13,538 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:31:13,539 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:31:13,540 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:31:13,541 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:31:17,608 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:31:17,609 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:31:17,612 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:31:17,612 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:31:19,842 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647084679.8426764, 'account_name': 'Guest', 'message_text': '12344'}
+2022-03-12 18:31:27,299 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 18:33:38,974 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:33:38,976 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:33:38,977 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:33:38,978 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:33:50,233 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:33:50,241 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:33:50,247 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:33:50,248 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:35:33,381 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647084933.3814864, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 18:35:57,695 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 18:43:23,779 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:43:23,780 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:43:23,783 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:43:23,786 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:43:28,736 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:43:28,737 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:43:28,739 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:43:28,740 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:43:30,900 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647085410.9002666, 'account_name': 'Guest', 'message_text': '`123'}
+2022-03-12 18:44:10,487 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:44:10,488 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:44:10,488 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:44:10,488 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:44:17,743 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:44:17,744 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:44:17,745 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:44:17,745 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:44:52,731 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:44:52,733 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:44:52,734 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:44:52,734 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:45:10,681 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 18:45:14,368 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 18:45:14,369 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 18:45:14,370 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 18:45:14,370 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 18:45:18,092 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647085518.0922189, 'account_name': 'Guest', 'message_text': '1234'}
+2022-03-12 18:50:15,526 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:50:55,466 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 18:53:27,691 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:04:45,752 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:04:45,753 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:04:45,755 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:04:45,756 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:04:52,983 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 19:04:56,669 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 19:04:56,670 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:04:57,678 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:04:57,679 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:05:00,867 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647086700.8679717, 'account_name': 'Guest', 'message_text': '12345'}
+2022-03-12 19:05:08,980 INFO client_send.py Завершение работы по команде пользователя
+2022-03-12 19:06:49,348 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:06:49,350 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:06:49,351 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:06:49,353 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:06:52,993 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 19:06:52,994 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:06:52,996 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:06:52,997 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:06:55,456 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647086815.4564338, 'account_name': 'Guest', 'message_text': '12345'}
+2022-03-12 19:06:56,032 INFO client.py Получено сообщение от пользователя Guest: 12345
+2022-03-12 19:08:25,074 ERROR client.py Соединение с сервером 127.0.0.1 неожиданно разорвано
+2022-03-12 19:08:49,895 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,896 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:08:49,903 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,909 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,911 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 19:08:49,912 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:08:49,908 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:08:49,912 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,917 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,914 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:08:49,920 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,921 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,926 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,927 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:08:49,927 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,927 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:08:49,940 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,940 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:08:49,941 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,941 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:08:49,977 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,977 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 19:08:49,979 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:08:49,980 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,980 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,984 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,985 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:08:49,986 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:08:49,986 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,986 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,987 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,987 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:08:49,987 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,987 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:08:49,988 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,988 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:08:49,988 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:49,988 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:08:50,404 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:08:50,404 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:50,405 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:51,418 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:51,418 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:08:51,419 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:51,419 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:08:57,290 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647086937.290877, 'account_name': 'Guest', 'message_text': '12345'}
+2022-03-12 19:08:57,290 DEBUG utils_log_decorator.py Функция create_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,290 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,456 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,456 INFO client.py Получено сообщение от пользователя Guest: 12345
+2022-03-12 19:08:57,457 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,460 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,460 INFO client.py Получено сообщение от пользователя Guest: 12345
+2022-03-12 19:08:57,461 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,462 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:08:57,462 INFO client.py Получено сообщение от пользователя Guest: 12345
+2022-03-12 19:08:57,463 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,319 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,319 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: listen
+2022-03-12 19:20:34,321 DEBUG client.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:20:34,321 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,321 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,322 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,322 DEBUG client.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:20:34,322 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:20:34,322 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:20:59,354 INFO client_send.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, режим работы: send
+2022-03-12 19:20:59,357 DEBUG client_send.py Сформировано presence сообщение для пользователя Guest
+2022-03-12 19:21:00,367 DEBUG client_send.py Разбор сообщения от сервера: {'response': 200}
+2022-03-12 19:21:00,368 INFO client_send.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-03-12 19:21:08,632 DEBUG client_send.py Сформирован словарь сообщения: {'action': 'message', 'time': 1647087668.632021, 'account_name': 'Guest', 'message_text': '12345'}
+2022-03-12 19:21:09,445 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-12 19:21:09,445 INFO client.py Получено сообщение от пользователя Guest: 12345
+2022-03-12 19:21:09,445 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
