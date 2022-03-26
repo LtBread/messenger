@@ -77,7 +77,7 @@ def print_help():
     print('Поддерживаемые команды:\n'
           'message - отправить сообщение. Адресат и текст будут запрошены отдельно\n'
           'help - вывести поддерживаемые команды\n'
-          'exit - выход из программы')
+          'exit - выход из программы\n')
 
 
 @log
@@ -91,7 +91,7 @@ def user_interactive(sock, username):
         elif command == 'help':
             print_help()
         elif command == 'exit':
-            send_message(sock, create_message(username))
+            send_message(sock, create_exit_message(username))
             print('Завершение соединения')
             LOGGER.info('Завершение работы по команде пользователя')
             time.sleep(0.5)  # Задержка необходима, чтобы успело уйти сообщение о выходе

@@ -13,7 +13,7 @@ ACTION = 'action'
 TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
-SENDER = 'sender'
+SENDER = 'from'
 DESTINATION = 'to'
 
 """ прочие ключи """

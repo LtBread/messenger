@@ -30,7 +30,7 @@ def process_client_message(message, message_list, client, clients, names):
         # Если такой пользователь не зарегистрирован, он регистрируется, иначе соединение завершается
         if message[USER][ACCOUNT_NAME] not in names.keys():
             names[message[USER][ACCOUNT_NAME]] = client
-            send_message(client, {RESPONSE_200})
+            send_message(client, RESPONSE_200)
         else:
             response = RESPONSE_400
             response[ERROR] = 'Имя пользователя уже занято'
