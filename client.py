@@ -51,10 +51,7 @@ def create_message(sock, account_name='Guest'):
     """ Запрашивает текст сообщения и возвращает его, по команде завершает работу """
     to_user = input('Введите имя получателя сообщения: ')
     message = input('Введите сообщение для отправки: ')
-    # if message == 'q':
-    #     sock.close()
-    #     LOGGER.info('Завершение работы по команде пользователя')
-    #     sys.exit(0)
+
     message_dict = {
         ACTION: MESSAGE,
         SENDER: account_name,
@@ -143,13 +140,11 @@ def arg_parser():
     server_address = namespace.addr
     server_port = namespace.port
     client_name = namespace.name
+
     if not 1023 < server_port < 65536:
         LOGGER.critical(f'Попытка запуска клиента с недопустимым портом: {server_port}. Сервер завершается')
         sys.exit(1)
-    # if client_name not in ('listen', 'send'):
-    #     LOGGER.critical(f'Указан недопустимый режим работы клиента {client_name}, '
-    #                     f'допустимые режимы: listen, send')
-    #     sys.exit(1)
+
     return server_address, server_port, client_name
 
 
@@ -165,22 +160,6 @@ def main():
 
     LOGGER.info(f'Запущен клиент с параметрами: адрес сервера: {server_address}, '
                 f'порт: {server_port}, имя пользователя: {client_name}')
-
-    # # считывание порта и адреса из командной строки
-    # try:
-    #     server_address = sys.argv[1]
-    #     server_port = int(sys.argv[2])
-    #     if not 1023 < server_port < 65536:
-    #         raise ValueError(server_port)
-    #     LOGGER.info(f'Запущен клиент с параметрами: адрес сервера: {server_address}, порт: {server_port}')
-    # except IndexError:
-    #     server_address = DEFAULT_IP_ADDRESS
-    #     server_port = DEFAULT_PORT
-    #     LOGGER.info(f'Скрипт запущен без одного или нескольких аргументов, '
-    #                 f'некоторые параметры заданы по умолчанию: {server_address} : {server_port}')
-    # except ValueError as e:
-    #     LOGGER.critical(f'Попытка запуска клиента с неподходящим номером порта: {e.args[0]}. Клиент завершается')
-    #     sys.exit(1)
 
     # инициализация сокета и обмен
     try:
@@ -222,24 +201,6 @@ def main():
             if receiver.is_alive() and user_interface.is_alive():
                 continue
             break
-
-        # if client_name == 'send':
-        #     print('Отправка сообщения')
-        # else:
-        #     print('Прием сообщения')
-        # while True:
-        #     if client_name == 'send':
-        #         try:
-        #             send_message(transport, create_message(transport))
-        #         except (ConnectionResetError, ConnectionError, ConnectionAbortedError):
-        #             LOGGER.error(f'Соединение с сервером {server_address} неожиданно разорвано')
-        #             sys.exit(1)
-        #     if client_name == 'listen':
-        #         try:
-        #             message_from_server(get_message(transport))
-        #         except (ConnectionResetError, ConnectionError, ConnectionAbortedError):
-        #             LOGGER.error(f'Соединение с сервером {server_address} неожиданно разорвано')
-        #             sys.exit(1)
 
 
 if __name__ == '__main__':

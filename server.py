@@ -1,7 +1,6 @@
 import sys
 import argparse
 import time
-import json
 import select
 import logging
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
@@ -54,8 +53,6 @@ def process_client_message(message, message_list, client, clients, names):
         response = RESPONSE_400
         response[ERROR] = 'Запрос некорректен'
         send_message(client, response)
-        # send_message(client, {RESPONSE: 400, ERROR: 'Bad request'})
-        # # send_message(client, {RESPONDEFAULT_IP_ADDRESSSE: 400, ERROR: 'Bad request'})
         return
 
 
@@ -158,21 +155,6 @@ def main():
                         clients.remove(names[DESTINATION])
                         del names[DESTINATION]
                     messages.clear()
-
-                # message = {
-                #     ACTION: MESSAGE,
-                #     SENDER: messages[0][0],
-                #     TIME: time.time(),
-                #     MESSAGE_TEXT: messages[0][1]
-                # }
-                # del messages[0]
-                # for waiting_client in send_data_list:
-                #     try:
-                #         send_message(waiting_client, message)
-                #     except:  # Слишком широкое исключение
-                #         LOGGER.info(f'Клиент {waiting_client.getpeername()} отключился от сервера')
-                #         waiting_client.close()
-                #         clients.remove(waiting_client)
 
 
 if __name__ == '__main__':

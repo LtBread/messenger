@@ -114,3 +114,27 @@
 2022-03-26 22:06:03,624 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
 2022-03-26 22:06:03,625 DEBUG server.py Разбор сообщения от клиента: {'action': 'exit', 'time': 1648307163.3723528, 'account_name': 'test_client_2'}
 2022-03-26 22:06:03,626 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,033 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,034 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-03-26 22:08:04,040 INFO server.py Установлено соединение с ('127.0.0.1', 55590)
+2022-03-26 22:08:04,046 INFO server.py Установлено соединение с ('127.0.0.1', 55591)
+2022-03-26 22:08:04,046 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,047 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1648307284.0393257, 'user': {'account_name': 'test_client_1'}}
+2022-03-26 22:08:04,049 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_client_message модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,050 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,050 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,052 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1648307284.0463073, 'user': {'account_name': 'test_client_2'}}
+2022-03-26 22:08:04,052 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_client_message модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:04,053 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:20,221 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:20,222 DEBUG server.py Разбор сообщения от клиента: {'action': 'message', 'from': 'test_client_2', 'to': 'test_client_1', 'time': 1648307299.3930416, 'message_text': 'hi'}
+2022-03-26 22:08:20,223 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:20,224 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_message модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:20,225 INFO server.py Отправлено сообщение пользователю test_client_1 от пользователя test_client_2
+2022-03-26 22:08:20,227 DEBUG utils_log_decorator.py Функция process_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:28,309 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:28,310 DEBUG server.py Разбор сообщения от клиента: {'action': 'exit', 'time': 1648307307.7919948, 'account_name': 'test_client_2'}
+2022-03-26 22:08:28,313 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:32,353 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-03-26 22:08:32,357 DEBUG server.py Разбор сообщения от клиента: {'action': 'exit', 'time': 1648307312.2651656, 'account_name': 'test_client_1'}
+2022-03-26 22:08:32,361 DEBUG utils_log_decorator.py Функция process_client_message вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
