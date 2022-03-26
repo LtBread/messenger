@@ -458,3 +458,36 @@
 2022-03-12 19:21:09,445 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
 2022-03-12 19:21:09,445 INFO client.py Получено сообщение от пользователя Guest: 12345
 2022-03-12 19:21:09,445 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,454 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,457 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,458 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_3
+2022-03-26 21:45:02,458 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_1
+2022-03-26 21:45:02,473 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,474 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_2
+2022-03-26 21:45:02,964 DEBUG client.py Сформировано presence сообщение для пользователя test_client_1
+2022-03-26 21:45:02,963 DEBUG client.py Сформировано presence сообщение для пользователя test_client_3
+2022-03-26 21:45:02,967 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,965 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,969 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,968 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,979 DEBUG client.py Сформировано presence сообщение для пользователя test_client_2
+2022-03-26 21:45:02,982 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:45:02,985 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:46:17,870 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:46:24,769 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test
+2022-03-26 21:46:26,809 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-03-26 21:47:18,005 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:47:21,391 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test
+2022-03-26 21:47:21,392 DEBUG client.py Сформировано presence сообщение для пользователя test
+2022-03-26 21:47:21,393 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:47:21,393 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:57,665 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:57,666 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_2
+2022-03-26 21:48:57,669 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:57,670 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_1
+2022-03-26 21:48:57,671 DEBUG client.py Сформировано presence сообщение для пользователя test_client_1
+2022-03-26 21:48:57,671 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:57,672 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:58,183 DEBUG client.py Сформировано presence сообщение для пользователя test_client_2
+2022-03-26 21:48:58,183 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-03-26 21:48:58,184 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py

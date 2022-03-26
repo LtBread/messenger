@@ -2,11 +2,12 @@ import subprocess
 
 
 PROCESS = []
-NUM_CLIENTS = 3
+NUM_CLIENTS = 2
 
 while True:
     ACTION = input('Выберете действие: q - выход, '
-                   's - запустить сервер и клиенты, x - закрыть все окна: ')
+                   's - запустить сервер и клиенты,'
+                   ' x - закрыть все окна: ')
 
     if ACTION == 'q':
         break
