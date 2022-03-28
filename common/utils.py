@@ -5,7 +5,7 @@ from errors import IncorrectDataRecivedError, NonDictInputError
 from common.variables import MAX_PACKAGE_LENGTH, ENCODING
 from logs.utils_log_decorator import log
 
-sys.path.append('../')
+# sys.path.append('../')
 
 
 @log

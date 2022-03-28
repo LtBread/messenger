@@ -8,12 +8,13 @@ MAX_PACKAGE_LENGTH = 1024  # максимальный размер сообще�
 ENCODING = 'utf-8'  # кодировка проекта
 LOGGING_LEVEL = logging.DEBUG  # текущий уровень логирования
 
-""" основные ключи JIM """
+""" основные ключи протокола JIM """
 ACTION = 'action'
 TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
-SENDER = 'sender'
+SENDER = 'from'
+DESTINATION = 'to'
 
 """ прочие ключи """
 PRESENCE = 'presence'
@@ -22,3 +23,8 @@ ERROR = 'error'
 MESSAGE = 'message'
 MESSAGE_TEXT = 'message_text'
 RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
+EXIT = 'exit'
+
+""" словари - ответы """
+RESPONSE_200 = {RESPONSE: 200}
+RESPONSE_400 = {RESPONSE: 400, ERROR: None}

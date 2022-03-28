@@ -1,7 +1,6 @@
 import sys
 import argparse
 import time
-import json
 import select
 import logging
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
@@ -9,7 +8,8 @@ from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 import logs.config_server_log
 from errors import IncorrectDataRecivedError
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, PRESENCE, TIME, USER, ERROR, \
-    DEFAULT_PORT, RESPONDEFAULT_IP_ADDRESSSE, MESSAGE, MESSAGE_TEXT, SENDER
+    DEFAULT_PORT, RESPONDEFAULT_IP_ADDRESSSE, MESSAGE, MESSAGE_TEXT, SENDER, RESPONSE_200, RESPONSE_400, DESTINATION, \
+    EXIT
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
 
@@ -18,27 +18,57 @@ LOGGER = logging.getLogger('server')
 
 
 @log
-def process_client_message(message, message_list, client):
+def process_client_message(message, message_list, client, clients, names):
     """
     Обрабатывает сообщения от клиентов, принимает словарь, проверяет,
-    формирует ответ клиенту в виде строки с "кодом ответа сервера"
+    отправляет словарь-ответ в случае необходимости
     """
     LOGGER.debug(f'Разбор сообщения от клиента: {message}')
     # если это сообщение о присутствии, принимает и отвечает
-    if ACTION in message and message[ACTION] == PRESENCE and TIME in message \
-            and USER in message and message[USER][ACCOUNT_NAME] == 'Guest':
-        send_message(client, {RESPONSE: 200})
+    if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:
+        # Если такой пользователь не зарегистрирован, он регистрируется, иначе соединение завершается
+        if message[USER][ACCOUNT_NAME] not in names.keys():
+            names[message[USER][ACCOUNT_NAME]] = client
+            send_message(client, RESPONSE_200)
+        else:
+            response = RESPONSE_400
+            response[ERROR] = 'Имя пользователя уже занято'
+            send_message(client, response)
+            clients.remove(client)
+            client.close()
         return
     # если это сообщение, то добавляет в очередь сообщений, ответ не требуется
-    elif ACTION in message and message[ACTION] == MESSAGE and TIME in message \
-            and MESSAGE_TEXT in message:
-        message_list.append((message[ACCOUNT_NAME], message[MESSAGE_TEXT]))
+    elif ACTION in message and message[ACTION] == MESSAGE and DESTINATION in message and TIME in message \
+            and SENDER in message and MESSAGE_TEXT in message:
+        message_list.append(message)
+        return
+    # если клиент выходит
+    elif ACTION in message and message[ACTION] == EXIT and ACCOUNT_NAME in message:
+        clients.remove(names[message[ACCOUNT_NAME]])
+        names[message[ACCOUNT_NAME]].close()
+        del names[message[ACCOUNT_NAME]]
         return
     # иначе Bad request
     else:
-        send_message(client, {RESPONSE: 400, ERROR: 'Bad request'})
-        # send_message(client, {RESPONDEFAULT_IP_ADDRESSSE: 400, ERROR: 'Bad request'})
+        response = RESPONSE_400
+        response[ERROR] = 'Запрос некорректен'
+        send_message(client, response)
         return
+
+
+@log
+def process_message(message, names, listen_socks):
+    """
+    Функция адресной отправки сообщения определённому клиенту. Принимает сообщение-словарь,
+    список зарегистрированных пользователей и слушающие сокеты. Ничего не возвращает
+    """
+    if message[DESTINATION] in names and names[message[DESTINATION]] in listen_socks:
+        send_message(names[message[DESTINATION]], message)
+        LOGGER.info(f'Отправлено сообщение пользователю {message[DESTINATION]} от пользователя {message[SENDER]}')
+    elif message[DESTINATION] in names and names[DESTINATION] not in listen_socks:
+        raise ConnectionError
+    else:
+        LOGGER.error(f'Пользователь {message[DESTINATION]} не зарегистрирован, отправка сообщения невозможна')
 
 
 @log
@@ -75,6 +105,8 @@ def main():
     clients = []  # клиенты
     messages = []  # сообщения клиентов
 
+    names = dict()  # {client_name: client_socket}
+
     # прослушивание порта
     transport.listen(MAX_CONNECTIONS)
 
@@ -107,27 +139,22 @@ def main():
         if recv_data_list:
             for client_with_message in recv_data_list:
                 try:
-                    process_client_message(get_message(client_with_message), messages, client_with_message)
-                except:  # Слишком широкое исключение
+                    process_client_message(
+                        get_message(client_with_message), messages, client_with_message, clients, names
+                    )
+                except Exception:  # Слишком широкое исключение
                     LOGGER.info(f'Клиент {client_with_message.getpeername()} отключился от сервера')
                     clients.remove(client_with_message)
 
-            # если есть сообщения для отправки и ожидающие клиенты, то им отправляются эти сообщения
-            if messages and send_data_list:
-                message = {
-                    ACTION: MESSAGE,
-                    SENDER: messages[0][0],
-                    TIME: time.time(),
-                    MESSAGE_TEXT: messages[0][1]
-                }
-                del messages[0]
-                for waiting_client in send_data_list:
+                # если есть сообщения, обрабатывается каждое
+                for mes in messages:
                     try:
-                        send_message(waiting_client, message)
-                    except:  # Слишком широкое исключение
-                        LOGGER.info(f'Клиент {waiting_client.getpeername()} отключился от сервера')
-                        waiting_client.close()
-                        clients.remove(waiting_client)
+                        process_message(mes, names, send_data_list)
+                    except Exception:  # Слишком широкое исключение
+                        LOGGER.info(f'Связь с клиентом {mes[DESTINATION]} потеряна')
+                        clients.remove(names[DESTINATION])
+                        del names[DESTINATION]
+                    messages.clear()
 
 
 if __name__ == '__main__':
