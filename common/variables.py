@@ -22,7 +22,7 @@ RESPONSE = 'response'
 ERROR = 'error'
 MESSAGE = 'message'
 MESSAGE_TEXT = 'message_text'
-RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
+# RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
 EXIT = 'exit'
 
 """ словари - ответы """

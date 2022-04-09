@@ -662,3 +662,87 @@
 2022-03-26 22:08:32,361 CRITICAL client.py Потеряно соединение с сервером
 2022-03-26 22:08:32,362 DEBUG utils_log_decorator.py Функция message_from_server вызвана из функции run модуля C:\Users\Bread\AppData\Local\Programs\Python\Python310\lib\threading.py
 2022-03-26 22:08:32,773 DEBUG utils_log_decorator.py Функция user_interactive вызвана из функции run модуля C:\Users\Bread\AppData\Local\Programs\Python\Python310\lib\threading.py
+2022-04-09 12:45:14,286 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,287 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,288 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_2
+2022-04-09 12:45:14,288 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_1
+2022-04-09 12:45:14,803 DEBUG client.py Сформировано presence сообщение для пользователя test_client_2
+2022-04-09 12:45:14,803 DEBUG client.py Сформировано presence сообщение для пользователя test_client_1
+2022-04-09 12:45:14,805 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,806 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,809 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,809 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,909 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,909 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 12:45:14,910 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,910 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 12:45:14,911 DEBUG client.py Потоки в работе
+2022-04-09 12:45:14,949 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,949 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 12:45:14,949 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:14,950 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 12:45:14,951 DEBUG client.py Потоки в работе
+2022-04-09 12:45:39,513 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'test_client_2', 'to': 'test_ckient_1', 'time': 1649483139.5130332, 'message_text': 'help'}
+2022-04-09 12:45:39,514 DEBUG utils_log_decorator.py Функция send_message вызвана из функции create_message модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:39,514 INFO client.py Отправлено сообщение для пользователя test_ckient_1
+2022-04-09 12:45:39,514 DEBUG utils_log_decorator.py Функция create_message вызвана из функции user_interactive модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:57,934 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'test_client_2', 'to': 'test_client_1', 'time': 1649483157.9340942, 'message_text': 'help'}
+2022-04-09 12:45:57,934 DEBUG utils_log_decorator.py Функция send_message вызвана из функции create_message модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:57,934 INFO client.py Отправлено сообщение для пользователя test_client_1
+2022-04-09 12:45:57,934 DEBUG utils_log_decorator.py Функция create_message вызвана из функции user_interactive модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:58,048 DEBUG utils_log_decorator.py Функция get_message вызвана из функции message_from_server модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 12:45:58,049 INFO client.py Получено сообщение от пользователя test_client_2: help
+2022-04-09 19:00:46,553 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:46,555 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_1
+2022-04-09 19:00:46,555 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:46,555 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test_client_2
+2022-04-09 19:00:47,069 DEBUG client.py Сформировано presence сообщение для пользователя test_client_2
+2022-04-09 19:00:47,070 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,070 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,075 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,075 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,182 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,183 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 19:00:47,184 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,184 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 19:00:47,186 DEBUG client.py Потоки в работе
+2022-04-09 19:00:47,257 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,257 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 19:00:47,258 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:00:47,258 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 19:00:47,259 DEBUG client.py Потоки в работе
+2022-04-09 19:01:19,082 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'test_client_1', 'to': 'test_client_2', 'time': 1649505679.0826843, 'message_text': 'ay'}
+2022-04-09 19:01:19,083 DEBUG utils_log_decorator.py Функция send_message вызвана из функции create_message модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:01:19,083 INFO client.py Отправлено сообщение для пользователя test_client_2
+2022-04-09 19:01:19,577 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:01:19,578 INFO client.py Получено сообщение от пользователя test_client_1: ay
+2022-04-09 19:01:45,095 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'test_client_2', 'to': 'test_client_1', 'time': 1649505705.0959814, 'message_text': 'ue'}
+2022-04-09 19:01:45,095 DEBUG utils_log_decorator.py Функция send_message вызвана из функции create_message модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:01:45,096 INFO client.py Отправлено сообщение для пользователя test_client_1
+2022-04-09 19:01:45,364 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:01:45,364 INFO client.py Получено сообщение от пользователя test_client_2: ue
+2022-04-09 19:04:50,016 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,017 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client2
+2022-04-09 19:04:50,022 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,023 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client1
+2022-04-09 19:04:50,533 DEBUG client.py Сформировано presence сообщение для пользователя client2
+2022-04-09 19:04:50,533 DEBUG client.py Сформировано presence сообщение для пользователя client1
+2022-04-09 19:04:50,534 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,534 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,537 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,538 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,702 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,702 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 19:04:50,703 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,703 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 19:04:50,705 DEBUG client.py Потоки в работе
+2022-04-09 19:04:50,810 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,810 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-09 19:04:50,811 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:04:50,811 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-09 19:04:50,812 DEBUG client.py Потоки в работе
+2022-04-09 19:05:07,701 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'client2', 'to': 'client1', 'time': 1649505907.7019005, 'message_text': 'rrrrr'}
+2022-04-09 19:05:07,701 DEBUG utils_log_decorator.py Функция send_message вызвана из функции create_message модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:05:07,702 INFO client.py Отправлено сообщение для пользователя client1
+2022-04-09 19:05:07,753 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\client.py
+2022-04-09 19:05:07,753 INFO client.py Получено сообщение от пользователя client2: rrrrr

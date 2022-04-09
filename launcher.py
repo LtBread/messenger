@@ -17,7 +17,7 @@ while True:
         # создание клиентов
         for client in range(1, NUM_CLIENTS + 1):
             PROCESS.append(
-                subprocess.Popen(f'python client.py -n test_client_{client}',
+                subprocess.Popen(f'python client.py -n client{client}',
                                  creationflags=subprocess.CREATE_NEW_CONSOLE)
             )
 
