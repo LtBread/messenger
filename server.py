@@ -8,7 +8,7 @@ from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 import logs.config_server_log
 from errors import IncorrectDataRecivedError
 from common.variables import *
-from common.utils import *
+from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
 
 # инициализация клиентского логера
@@ -31,6 +31,7 @@ def arg_parser():
 
 
 class Server:
+    """ Основной класс сервера """
     def __init__(self, listen_address, listen_port):
         self.addr = listen_address
         self.port = listen_port
