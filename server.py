@@ -10,28 +10,16 @@ from errors import IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
+from descriptors import Port
 
 # инициализация клиентского логера
 logger = logging.getLogger('server')
 
 
-@log
-def arg_parser():
-    """ Парсер аргументов командной строки """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-a', default='', nargs='?')
-    namespace = parser.parse_args(sys.argv[1:])
-    listen_address = namespace.a
-    listen_port = namespace.p
-    # if not 1023 < listen_port < 65536:
-    #     logger.critical(f'Попытка запуска сервера с недопустимым портом: {listen_port}. Сервер завершается')
-    #     sys.exit(1)
-    return listen_address, listen_port
-
-
 class Server:
     """ Основной класс сервера """
+    port = Port()
+
     def __init__(self, listen_address, listen_port):
         self.addr = listen_address
         self.port = listen_port
@@ -164,12 +152,25 @@ class Server:
             return
 
 
+@log
+def arg_parser():
+    """ Парсер аргументов командной строки """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
+    parser.add_argument('-a', default='', nargs='?')
+    namespace = parser.parse_args(sys.argv[1:])
+    listen_address = namespace.a
+    listen_port = namespace.p
+    return listen_address, listen_port
+
+
 def main():
     """ Загружает параметры командной строки """
     listen_address, listen_port = arg_parser()
 
     # создание экземпляра класса Server
     server = Server(listen_address, listen_port)
+    print(type(server.port))
     server.main_loop()
 
 

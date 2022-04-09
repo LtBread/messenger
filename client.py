@@ -51,7 +51,7 @@ class ClientSender(threading.Thread):
         except Exception as e:
             print(e)
             logger.critical('Что-то пошло не так. Соединение с сервером разорвано.')
-            sys.exit(1)
+            exit(1)
 
     def run(self):
         """ Функция взаимодействия с пользователем. Запрашивает команды, отправляет сообщения """
@@ -155,7 +155,7 @@ def arg_parser():
 
     if not 1023 < server_port < 65536:
         logger.critical(f'Попытка запуска клиента с недопустимым портом: {server_port}. Сервер завершается')
-        sys.exit(1)
+        exit(1)
 
     return server_address, server_port, client_name
 
@@ -187,17 +187,17 @@ def main():
         # print('Установлено соединение с сервером')
     except json.JSONDecodeError:
         logger.error('Не удалось декодировать полученную строку JSON')
-        sys.exit(1)
+        exit(1)
     except ServerError as e:
         logger.error(f'При установке соединения сервер вернул ошибку: {e.text}')
-        sys.exit(1)
+        exit(1)
     except ReqFileMissingError as missing_error:
         logger.error(f'В ответе сервера отсутствует необходимое поле {missing_error.missing_field}')
-        sys.exit(1)
+        exit(1)
     except (ConnectionRefusedError, ConnectionRefusedError):
         logger.critical(f'Не удалось подключиться к северу {server_address}: {server_port}, '
                         f'конечный хост отверг запрос на подключение')
-        sys.exit(1)
+        exit(1)
     else:
         # ОСНОВНОЙ ЦИКЛ
         # если соединение с сервером установлено корректно, запуск клиентского потока приёма сообщений
