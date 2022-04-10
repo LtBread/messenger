@@ -1,5 +1,6 @@
 .idea/
 common/__pycache__/
 __pycache__/
-client_send.py
-
+logs/client.log
+logs/server.log
+logs/server.log*

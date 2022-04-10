@@ -11,14 +11,14 @@ from errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
+from metaclasses import ClientVerifier
 
 # инициализация клиентского логера
 logger = logging.getLogger('client')
 
 
-class ClientSender(threading.Thread):
-    """ Класс формирования и отправки сообщений на сервер и взаимодействия с пользователем """
-
+# Класс формирования и отправки сообщений на сервер и взаимодействия с пользователем
+class ClientSender(threading.Thread, metaclass=ClientVerifier):
     def __init__(self, account_name, sock):
         super().__init__()
         self.account_name = account_name
@@ -79,11 +79,8 @@ class ClientSender(threading.Thread):
               'exit - выход из программы\n')
 
 
-class ClientReader(threading.Thread):
-    """
-    Класс приёма сообщений, принимает сообщения, выводит в консоль.
-    Завершается при потере соединения
-    """
+# Класс приёма сообщений, принимает сообщения, выводит в консоль. Завершается при потере соединения
+class ClientReader(threading.Thread, metaclass=ClientVerifier):
     def __init__(self, account_name, sock):
         super().__init__()
         self.account_name = account_name

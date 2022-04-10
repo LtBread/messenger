@@ -11,13 +11,14 @@ from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
 from descriptors import Port
+from metaclasses import ServerVerifier
 
 # инициализация клиентского логера
 logger = logging.getLogger('server')
 
 
-class Server:
-    """ Основной класс сервера """
+class Server(metaclass=ServerVerifier):
+    """Основной_класс_сервера"""
     port = Port()
 
     def __init__(self, listen_address, listen_port):
@@ -53,7 +54,7 @@ class Server:
             try:
                 client, client_address = self.sock.accept()
             except OSError as e:
-                print(e.errno)  # The error number returns None because it's just a timeout
+                # print(e.errno)  # The error number returns None because it's just a timeout
                 """ ТУТ ДОПИЛИТЬ """
                 pass
             else:
@@ -170,7 +171,6 @@ def main():
 
     # создание экземпляра класса Server
     server = Server(listen_address, listen_port)
-    print(type(server.port))
     server.main_loop()
 
 
