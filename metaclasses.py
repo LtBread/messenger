@@ -76,6 +76,6 @@ class ClientVerifier(type):
 
         if 'accept' in load_global and 'listen' in load_global:
             raise TypeError(f'В классе {clsname} обнаружено использование запрещённого приёма')
-        if not ('SOCK_STREAM' in load_global and 'AF_INET' in load_global):
-            raise TypeError('некорректная инициализация сокета')
+        if not ('get_message' in load_global or 'send_message' in load_global):
+            raise TypeError('Отсутствует вызов функции, работающей с сокетами')
         super().__init__(clsname, bases, clsdict)
