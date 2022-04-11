@@ -1,6 +1,4 @@
 .idea/
 common/__pycache__/
 __pycache__/
-logs/client.log
-logs/server.log
 logs/server.log*
