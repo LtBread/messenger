@@ -778,3 +778,20 @@
 2022-04-11 21:15:20,653 INFO client.py Отправлено сообщение для пользователя client2
 2022-04-11 21:15:21,127 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\client.py
 2022-04-11 21:15:21,128 INFO client.py Получено сообщение от пользователя client1: www
+2022-04-13 20:04:17,791 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:04:25,345 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client1
+2022-04-13 20:04:25,346 DEBUG client.py Сформировано presence сообщение для пользователя client1
+2022-04-13 20:04:25,346 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:04:25,346 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:04:57,935 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:04:57,936 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client2
+2022-04-13 20:04:57,951 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:04:57,952 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client1
+2022-04-13 20:04:59,978 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-04-13 20:04:59,989 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-04-13 20:05:04,521 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:05:04,521 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client2
+2022-04-13 20:05:04,534 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-13 20:05:04,534 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client1
+2022-04-13 20:05:06,566 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
+2022-04-13 20:05:06,566 CRITICAL client.py Не удалось подключиться к северу 127.0.0.1: 7777, конечный хост отверг запрос на подключение
