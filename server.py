@@ -10,28 +10,17 @@ from errors import IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
+from descriptors import Port
+from metaclasses import ServerVerifier
 
 # инициализация клиентского логера
 logger = logging.getLogger('server')
 
 
-@log
-def arg_parser():
-    """ Парсер аргументов командной строки """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-a', default='', nargs='?')
-    namespace = parser.parse_args(sys.argv[1:])
-    listen_address = namespace.a
-    listen_port = namespace.p
-    # if not 1023 < listen_port < 65536:
-    #     logger.critical(f'Попытка запуска сервера с недопустимым портом: {listen_port}. Сервер завершается')
-    #     sys.exit(1)
-    return listen_address, listen_port
+class Server(metaclass=ServerVerifier):
+    """Основной_класс_сервера"""
+    port = Port()
 
-
-class Server:
-    """ Основной класс сервера """
     def __init__(self, listen_address, listen_port):
         self.addr = listen_address
         self.port = listen_port
@@ -65,7 +54,7 @@ class Server:
             try:
                 client, client_address = self.sock.accept()
             except OSError as e:
-                print(e.errno)  # The error number returns None because it's just a timeout
+                # print(e.errno)  # The error number returns None because it's just a timeout
                 """ ТУТ ДОПИЛИТЬ """
                 pass
             else:
@@ -162,6 +151,18 @@ class Server:
             response[ERROR] = 'Запрос некорректен'
             send_message(client, response)
             return
+
+
+@log
+def arg_parser():
+    """ Парсер аргументов командной строки """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
+    parser.add_argument('-a', default='', nargs='?')
+    namespace = parser.parse_args(sys.argv[1:])
+    listen_address = namespace.a
+    listen_port = namespace.p
+    return listen_address, listen_port
 
 
 def main():

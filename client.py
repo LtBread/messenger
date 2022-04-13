@@ -11,14 +11,14 @@ from errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
+from metaclasses import ClientVerifier
 
 # инициализация клиентского логера
 logger = logging.getLogger('client')
 
 
-class ClientSender(threading.Thread):
-    """ Класс формирования и отправки сообщений на сервер и взаимодействия с пользователем """
-
+# Класс формирования и отправки сообщений на сервер и взаимодействия с пользователем
+class ClientSender(threading.Thread, metaclass=ClientVerifier):
     def __init__(self, account_name, sock):
         super().__init__()
         self.account_name = account_name
@@ -51,7 +51,7 @@ class ClientSender(threading.Thread):
         except Exception as e:
             print(e)
             logger.critical('Что-то пошло не так. Соединение с сервером разорвано.')
-            sys.exit(1)
+            exit(1)
 
     def run(self):
         """ Функция взаимодействия с пользователем. Запрашивает команды, отправляет сообщения """
@@ -79,11 +79,8 @@ class ClientSender(threading.Thread):
               'exit - выход из программы\n')
 
 
-class ClientReader(threading.Thread):
-    """
-    Класс приёма сообщений, принимает сообщения, выводит в консоль.
-    Завершается при потере соединения
-    """
+# Класс приёма сообщений, принимает сообщения, выводит в консоль. Завершается при потере соединения
+class ClientReader(threading.Thread, metaclass=ClientVerifier):
     def __init__(self, account_name, sock):
         super().__init__()
         self.account_name = account_name
@@ -155,7 +152,7 @@ def arg_parser():
 
     if not 1023 < server_port < 65536:
         logger.critical(f'Попытка запуска клиента с недопустимым портом: {server_port}. Сервер завершается')
-        sys.exit(1)
+        exit(1)
 
     return server_address, server_port, client_name
 
@@ -187,17 +184,17 @@ def main():
         # print('Установлено соединение с сервером')
     except json.JSONDecodeError:
         logger.error('Не удалось декодировать полученную строку JSON')
-        sys.exit(1)
+        exit(1)
     except ServerError as e:
         logger.error(f'При установке соединения сервер вернул ошибку: {e.text}')
-        sys.exit(1)
+        exit(1)
     except ReqFileMissingError as missing_error:
         logger.error(f'В ответе сервера отсутствует необходимое поле {missing_error.missing_field}')
-        sys.exit(1)
+        exit(1)
     except (ConnectionRefusedError, ConnectionRefusedError):
         logger.critical(f'Не удалось подключиться к северу {server_address}: {server_port}, '
                         f'конечный хост отверг запрос на подключение')
-        sys.exit(1)
+        exit(1)
     else:
         # ОСНОВНОЙ ЦИКЛ
         # если соединение с сервером установлено корректно, запуск клиентского потока приёма сообщений
