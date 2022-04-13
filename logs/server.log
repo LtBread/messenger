@@ -32,3 +32,25 @@
 2022-04-13 20:04:25,346 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
 2022-04-13 20:04:25,347 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1649855065.3464122, 'user': {'account_name': 'client1'}}
 2022-04-13 20:04:25,350 INFO server.py Клиент ('127.0.0.1', 51043) отключился от сервера
+2022-04-13 20:07:23,514 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:07:23,546 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-13 20:07:40,982 INFO server.py Установлено соединение с ('127.0.0.1', 51255)
+2022-04-13 20:07:40,982 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:07:40,983 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1649855260.981759, 'user': {'account_name': 'client1'}}
+2022-04-13 20:07:41,007 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_client_message модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:07:59,882 INFO server.py Установлено соединение с ('127.0.0.1', 51277)
+2022-04-13 20:07:59,883 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:07:59,883 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1649855279.8829532, 'user': {'account_name': 'client2'}}
+2022-04-13 20:07:59,899 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_client_message модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:23,269 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:23,269 DEBUG server.py Разбор сообщения от клиента: {'action': 'message', 'from': 'client2', 'to': 'client1', 'time': 1649855302.9041393, 'message_text': 'hello'}
+2022-04-13 20:08:23,269 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_message модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:23,270 INFO server.py Отправлено сообщение пользователю client1 от пользователя client2
+2022-04-13 20:08:39,894 INFO server.py Установлено соединение с ('127.0.0.1', 51325)
+2022-04-13 20:08:39,894 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:39,895 DEBUG server.py Разбор сообщения от клиента: {'action': 'presence', 'time': 1649855319.8945785, 'user': {'account_name': 'client3'}}
+2022-04-13 20:08:39,925 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_client_message модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:52,141 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:52,141 DEBUG server.py Разбор сообщения от клиента: {'action': 'message', 'from': 'client3', 'to': 'client2', 'time': 1649855331.7241788, 'message_text': 'help'}
+2022-04-13 20:08:52,141 DEBUG utils_log_decorator.py Функция send_message вызвана из функции process_message модуля C:\projects\messenger-app\messenger\server.py
+2022-04-13 20:08:52,142 INFO server.py Отправлено сообщение пользователю client2 от пользователя client3
