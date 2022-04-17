@@ -134,18 +134,18 @@ class ConfigWindow(QDialog):
 
         # надпись о файле БД
         self.db_path_label = QLabel('Путь до файла базы данных: ', self)
-        self.db_path_label.setFixedSize(240, 15)
+        self.db_path_label.setFixedSize(260, 20)
         self.db_path_label.move(10, 10)
 
         # путь до БД
         self.db_path = QLineEdit(self)
-        self.db_path.setFixedSize(250, 20)
-        self.db_path.move(10, 50)
+        self.db_path.setFixedSize(260, 40)
+        self.db_path.move(10, 40)
         self.db_path.setReadOnly(True)
 
         # кнопка выбора пути
         self.db_path_select = QPushButton('Обзор...', self)
-        self.db_path_select.move(275, 28)
+        self.db_path_select.move(280, 40)
 
         # функция обработки октрытия окна выбора папки
         def open_file_dialog():
@@ -159,46 +159,46 @@ class ConfigWindow(QDialog):
 
         # надпись с именем поля файла БД
         self.db_file_label = QLabel('Имя файла базы данных: ', self)
-        self.db_file_label.setFixedSize(180, 15)
-        self.db_file_label.move(10, 68)
+        self.db_file_label.setFixedSize(260, 20)
+        self.db_file_label.move(10, 100)
 
         # поле для ввода имени файла
         self.db_file = QLineEdit(self)
-        self.db_file.setFixedSize(150, 20)
-        self.db_file.move(200, 66)
+        self.db_file.setFixedSize(300, 40)
+        self.db_file.move(280, 100)
 
         # надпись с номером порта
         self.port_label = QLabel('Номер порта: ', self)
-        self.port_label.setFixedSize(180, 15)
-        self.port_label.move(10, 108)
+        self.port_label.setFixedSize(260, 20)
+        self.port_label.move(10, 150)
 
         # поле для ввода номера порта
         self.port = QLineEdit(self)
-        self.port.setFixedSize(150, 20)
-        self.port.move(200, 108)
+        self.port.setFixedSize(300, 40)
+        self.port.move(280, 150)
 
         # надпись с адресом
         self.ip_label = QLabel('IP-адрес: ', self)
-        self.ip_label.setFixedSize(180, 15)
-        self.ip_label.move(10, 148)
+        self.ip_label.setFixedSize(260, 20)
+        self.ip_label.move(10, 200)
 
         # надпись с напоминанием о пустом поле
-        self.ip_label_note = QLabel('(Оставьте пустым, чтобы принимать соединения с любых адресов', self)
-        self.ip_label_note.setFixedSize(500, 300)
-        self.ip_label_note.move(10, 168)
+        self.ip_label_note = QLabel('(Оставьте пустым, чтобы \nпринимать соединения с \nлюбых адресов)', self)
+        self.ip_label_note.setFixedSize(260, 100)
+        self.ip_label_note.move(10, 220)
 
         # поле для ввода адреса
         self.ip = QLineEdit(self)
-        self.ip.setFixedSize(150, 20)
-        self.move(200, 148)
+        self.ip.setFixedSize(300, 40)
+        self.ip.move(280, 200)
 
         # кнопка сохранения настроек
         self.save_btn = QPushButton('Сохранить', self)
-        self.save_btn.move(190, 220)
+        self.save_btn.move(280, 300)
 
         # кнопка закрытия окна
         self.close_btn = QPushButton('Закрыть', self)
-        self.close_btn.move(275, 220)
+        self.close_btn.move(450, 300)
         self.close_btn.clicked.connect(self.close)
 
         self.show()
