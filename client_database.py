@@ -132,8 +132,10 @@ if __name__ == '__main__':
         test_bd.add_contacts(item)
     test_bd.add_contacts('test2')
     test_bd.add_users(['test2', 'test3', 'test4', 'test5', 'test10'])
-    test_bd.save_message('test1', 'test2', f'Тестовое сообщение. Проверка связи... {datetime.now()}')
-    test_bd.save_message('test2', 'test1', f'№ 2. Проверка связи... {datetime.now()}')
+    test_bd.save_message('test1', 'test2',
+                         f'Проверка... Тестовое сообщение от {datetime.now().strftime("%m-%d-%Y, %H:%M")}')
+    test_bd.save_message('test2', 'test1',
+                         f'Проверка № 2... Тестовое сообщение от {datetime.now().strftime("%m-%d-%Y, %H:%M")}')
 
     print(test_bd.get_contacts())
     print(test_bd.get_users())
