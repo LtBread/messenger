@@ -1,5 +1,4 @@
-import sqlalchemy
-from sqlalchemy import Table, Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import mapper, sessionmaker
 
 import server
@@ -51,9 +50,9 @@ class ServerDB:
 
         """
         print(path)
-        self.database_engine = sqlalchemy.create_engine(f'sqlite:///{path}', echo=False, pool_recycle=7200,
-                                                        connect_args={'check_same_thread': False})
-        self.metadata = sqlalchemy.MetaData()
+        self.database_engine = create_engine(f'sqlite:///{path}', echo=False, pool_recycle=7200,
+                                             connect_args={'check_same_thread': False})
+        self.metadata = MetaData()
 
         all_users_table = Table('Users', self.metadata,
                                 Column('id', Integer, primary_key=True),
@@ -75,11 +74,11 @@ class ServerDB:
                                     Column('date_time', DateTime)
                                     )
 
-        users_contacts = Table('Users_contacts', self.metadata,
-                               Column('id', Integer, primary_key=True),
-                               Column('user_id', ForeignKey('Users.id')),
-                               Column('contact', ForeignKey('Users.id'))
-                               )
+        users_contacts_table = Table('Users_contacts', self.metadata,
+                                     Column('id', Integer, primary_key=True),
+                                     Column('user_id', ForeignKey('Users.id')),
+                                     Column('contact', ForeignKey('Users.id'))
+                                     )
 
         users_history_table = Table('Users_history', self.metadata,
                                     Column('id', Integer, primary_key=True),
@@ -95,7 +94,7 @@ class ServerDB:
         mapper(self.AllUsers, all_users_table)
         mapper(self.ActiveUsers, active_users_table)
         mapper(self.LoginHistory, login_history_table)
-        mapper(self.UsersContacts, users_contacts)
+        mapper(self.UsersContacts, users_contacts_table)
         mapper(self.UsersHistory, users_history_table)
 
         # создание сессии
