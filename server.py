@@ -271,7 +271,7 @@ def main():
     # настройка параметров окна
     main_window.statusBar().showMessage('Server Working')
     main_window.active_clients_table.setModel(gui_create_model(database))
-    main_window.active_clients_table.resizeColumnToContents()
+    main_window.active_clients_table.resizeColumnsToContents()
     main_window.active_clients_table.resizeRowsToContents()
 
     def list_update():
@@ -282,7 +282,7 @@ def main():
         global new_connection
         if new_connection:
             main_window.active_clients_table.setModel(gui_create_model(database))
-            main_window.active_clients_table.resizeColumnToContents()
+            main_window.active_clients_table.resizeColumnsToContents()
             main_window.active_clients_table.resizeRowsToContents()
             with conflag_lock:
                 new_connection = False
@@ -292,7 +292,7 @@ def main():
         global stat_window
         stat_window = HistoryWindow()
         stat_window.history_table.setModel(create_start_model(database))
-        stat_window.history_table.resizeColumnToContents()
+        stat_window.history_table.resizeColumnsToContents()
         stat_window.history_table.resizeRowsToContents()
         stat_window.show()
 

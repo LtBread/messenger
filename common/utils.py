@@ -8,7 +8,7 @@ from logs.utils_log_decorator import log
 # sys.path.append('../')
 
 
-@log
+# @log
 def get_message(client):
     """
     Получает сообщение в виде байтов и возвращает словарь,
@@ -24,7 +24,7 @@ def get_message(client):
     raise IncorrectDataRecivedError
 
 
-@log
+# @log
 def send_message(sock, message):
     """ Принимает словарь, кодирует и отправляет сообщение в виде байтов """
     if not isinstance(message, dict):

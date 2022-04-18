@@ -23,5 +23,4 @@ while True:
 
     elif ACTION == 'x':
         while PROCESS:
-            VICTIM = PROCESS.pop()
-            VICTIM.kill()
+            PROCESS.pop().kill()

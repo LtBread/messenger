@@ -1,10 +1,9 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import mapper, sessionmaker
-
-import server
-from common.variables import *
 from datetime import datetime
 from pprint import pprint
+
+from common.variables import *
 
 
 class ServerDB:
@@ -142,7 +141,7 @@ class ServerDB:
         self.session.query(self.ActiveUsers).filter_by(user_id=user.id).delete()  # удаление
         self.session.commit()
 
-    def process_massage(self, sender, recipient):
+    def process_message(self, sender, recipient):
         """ Функция фиксации передачи сообщения в БД """
         sender = self.session.query(self.AllUsers).filter_by(username=sender).first().id  # id отправителя
         recipient = self.session.query(self.AllUsers).filter_by(username=recipient).first().id  # id получателя

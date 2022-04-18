@@ -838,3 +838,194 @@
 2022-04-13 20:08:51,724 INFO client.py Отправлено сообщение для пользователя client2
 2022-04-13 20:08:52,141 DEBUG utils_log_decorator.py Функция get_message вызвана из функции run модуля C:\projects\messenger-app\messenger\client.py
 2022-04-13 20:08:52,142 INFO client.py Получено сообщение от пользователя client3: help
+2022-04-18 18:03:17,668 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:28,368 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:38,839 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: uno
+2022-04-18 18:03:38,839 DEBUG client.py Сформировано presence сообщение для пользователя uno
+2022-04-18 18:03:38,839 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:38,839 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:38,875 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:38,875 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:03:38,875 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:38,875 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:03:38,918 DEBUG client.py Запрос списка известных пользователей uno
+2022-04-18 18:03:38,918 DEBUG utils_log_decorator.py Функция send_message вызвана из функции user_list_request модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:03:39,418 DEBUG utils_log_decorator.py Функция get_message вызвана из функции user_list_request модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:32,897 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:53,257 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: client_test1
+2022-04-18 18:05:53,257 DEBUG client.py Сформировано presence сообщение для пользователя client_test1
+2022-04-18 18:05:53,257 DEBUG utils_log_decorator.py Функция create_presence вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:53,257 DEBUG utils_log_decorator.py Функция send_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:53,287 DEBUG utils_log_decorator.py Функция get_message вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:53,287 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:05:53,288 DEBUG utils_log_decorator.py Функция process_response_anc вызвана из функции main модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:05:53,288 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:05:53,327 DEBUG client.py Запрос списка известных пользователей client_test1
+2022-04-18 18:05:53,327 DEBUG utils_log_decorator.py Функция send_message вызвана из функции user_list_request модуля C:\projects\messenger-app\messenger\client.py
+2022-04-18 18:16:31,512 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:16:38,559 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: user1
+2022-04-18 18:16:38,559 DEBUG client.py Сформировано presence сообщение для пользователя user1
+2022-04-18 18:16:38,559 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('user1',) , {}, вызвана из модуля __main__
+2022-04-18 18:16:38,559 DEBUG utils_log_decorator.py Функция send_message с параметрами (<socket.socket fd=540, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59300), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1650280598.5592618, 'user': {'account_name': 'user1'}}) , {}, вызвана из модуля common.utils
+2022-04-18 18:16:38,590 DEBUG utils_log_decorator.py Функция get_message с параметрами (<socket.socket fd=540, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59300), raddr=('127.0.0.1', 7777)>,) , {}, вызвана из модуля common.utils
+2022-04-18 18:16:38,590 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:16:38,590 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:16:38,590 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:16:38,637 DEBUG client.py Запрос списка известных пользователей user1
+2022-04-18 18:16:38,637 DEBUG utils_log_decorator.py Функция send_message с параметрами (<socket.socket fd=540, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 59300), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1650280598.6373332, 'account_name': 'user1'}) , {}, вызвана из модуля common.utils
+2022-04-18 18:17:48,390 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:17:53,927 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: 222
+2022-04-18 18:17:53,927 DEBUG client.py Сформировано presence сообщение для пользователя 222
+2022-04-18 18:17:53,927 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('222',) , {}, вызвана из модуля __main__
+2022-04-18 18:17:53,958 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:17:53,958 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:17:53,958 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:17:54,005 DEBUG client.py Запрос списка известных пользователей 222
+2022-04-18 18:22:50,648 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:22:57,406 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: user1
+2022-04-18 18:22:57,406 DEBUG client.py Сформировано presence сообщение для пользователя user1
+2022-04-18 18:22:57,406 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('user1',) , {}, вызвана из модуля __main__
+2022-04-18 18:22:57,437 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:22:57,437 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:22:57,437 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:22:57,469 DEBUG client.py Запрос списка известных пользователей user1
+2022-04-18 18:24:33,211 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:24:39,411 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: scan
+2022-04-18 18:24:39,411 DEBUG client.py Сформировано presence сообщение для пользователя scan
+2022-04-18 18:24:39,411 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('scan',) , {}, вызвана из модуля __main__
+2022-04-18 18:24:39,458 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:24:39,458 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:24:39,458 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:24:39,505 DEBUG client.py Запрос списка известных пользователей scan
+2022-04-18 18:25:22,319 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:25:43,888 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:25:49,732 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: www
+2022-04-18 18:25:49,748 DEBUG client.py Сформировано presence сообщение для пользователя www
+2022-04-18 18:25:49,748 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('www',) , {}, вызвана из модуля __main__
+2022-04-18 18:25:50,313 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:25:50,313 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:25:50,313 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:26:30,846 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:26:39,272 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: quer
+2022-04-18 18:26:39,287 DEBUG client.py Сформировано presence сообщение для пользователя quer
+2022-04-18 18:26:39,287 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('quer',) , {}, вызвана из модуля __main__
+2022-04-18 18:26:39,850 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:26:39,850 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:26:39,850 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:27:42,915 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:27:45,638 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: dscfs
+2022-04-18 18:27:45,638 DEBUG client.py Сформировано presence сообщение для пользователя dscfs
+2022-04-18 18:27:45,638 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('dscfs',) , {}, вызвана из модуля __main__
+2022-04-18 18:27:45,653 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:27:45,653 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:27:45,653 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:27:45,700 DEBUG client.py Запрос списка известных пользователей dscfs
+2022-04-18 18:28:02,119 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:28:08,104 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: nbm,vcxb
+2022-04-18 18:28:08,119 DEBUG client.py Сформировано presence сообщение для пользователя nbm,vcxb
+2022-04-18 18:28:08,119 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('nbm,vcxb',) , {}, вызвана из модуля __main__
+2022-04-18 18:28:08,635 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:28:08,635 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:28:08,635 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:30:11,859 DEBUG client.py Запрос списка известных пользователей nbm,vcxb
+2022-04-18 18:33:21,700 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:33:26,471 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: ilya
+2022-04-18 18:33:26,471 DEBUG client.py Сформировано presence сообщение для пользователя ilya
+2022-04-18 18:33:26,471 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('ilya',) , {}, вызвана из модуля __main__
+2022-04-18 18:33:26,502 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:33:26,502 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:33:26,502 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:33:26,549 DEBUG client.py Запрос списка известных пользователей ilya
+2022-04-18 18:33:27,049 DEBUG client.py Запрос списка контактов пользователя ilya
+2022-04-18 18:33:27,049 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650281607.049552, 'user': 'ilya'}
+2022-04-18 18:33:27,580 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:33:27,580 DEBUG client.py Поток в работе
+2022-04-18 18:33:36,736 CRITICAL client.py Потеряно соединение с сервером
+2022-04-18 18:34:09,692 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:34:14,805 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: биба
+2022-04-18 18:34:14,805 DEBUG client.py Сформировано presence сообщение для пользователя биба
+2022-04-18 18:34:14,805 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('биба',) , {}, вызвана из модуля __main__
+2022-04-18 18:34:14,836 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:34:14,836 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:34:14,836 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:34:14,883 DEBUG client.py Запрос списка известных пользователей биба
+2022-04-18 18:34:15,398 DEBUG client.py Запрос списка контактов пользователя биба
+2022-04-18 18:34:15,398 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650281655.3988292, 'user': 'биба'}
+2022-04-18 18:34:15,898 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:34:15,914 DEBUG client.py Поток в работе
+2022-04-18 18:34:18,467 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:34:23,139 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: боба
+2022-04-18 18:34:23,155 DEBUG client.py Сформировано presence сообщение для пользователя боба
+2022-04-18 18:34:23,155 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('боба',) , {}, вызвана из модуля __main__
+2022-04-18 18:34:23,171 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:34:23,171 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:34:23,171 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:34:23,218 DEBUG client.py Запрос списка известных пользователей боба
+2022-04-18 18:34:23,702 DEBUG client.py Запрос списка контактов пользователя боба
+2022-04-18 18:34:23,702 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650281663.7027395, 'user': 'боба'}
+2022-04-18 18:34:24,187 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:34:24,187 DEBUG client.py Поток в работе
+2022-04-18 18:34:45,142 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'боба', 'to': 'биба', 'time': 1650281685.1424515, 'message_text': 'привет биба'}
+2022-04-18 18:34:45,142 INFO client.py Отправлено сообщение для пользователя биба
+2022-04-18 18:35:19,700 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: боба
+2022-04-18 18:36:17,786 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: боба
+2022-04-18 18:36:44,031 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: боба
+2022-04-18 18:36:49,582 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:36:54,165 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: лупа
+2022-04-18 18:36:54,165 DEBUG client.py Сформировано presence сообщение для пользователя лупа
+2022-04-18 18:36:54,165 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('лупа',) , {}, вызвана из модуля __main__
+2022-04-18 18:39:09,594 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:39:13,704 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: biba
+2022-04-18 18:39:13,704 DEBUG client.py Сформировано presence сообщение для пользователя biba
+2022-04-18 18:39:13,704 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('biba',) , {}, вызвана из модуля __main__
+2022-04-18 18:39:13,735 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:39:13,735 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:39:13,735 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:39:13,767 DEBUG client.py Запрос списка известных пользователей biba
+2022-04-18 18:39:14,267 DEBUG client.py Запрос списка контактов пользователя biba
+2022-04-18 18:39:14,267 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650281954.2672718, 'user': 'biba'}
+2022-04-18 18:39:14,782 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:39:14,782 DEBUG client.py Поток в работе
+2022-04-18 18:39:18,083 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:39:21,099 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: boba
+2022-04-18 18:39:21,099 DEBUG client.py Сформировано presence сообщение для пользователя boba
+2022-04-18 18:39:21,099 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('boba',) , {}, вызвана из модуля __main__
+2022-04-18 18:39:21,130 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:39:21,130 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:39:21,130 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:39:21,161 DEBUG client.py Запрос списка известных пользователей boba
+2022-04-18 18:39:21,692 DEBUG client.py Запрос списка контактов пользователя boba
+2022-04-18 18:39:21,692 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650281961.6927361, 'user': 'boba'}
+2022-04-18 18:39:22,161 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:39:22,161 DEBUG client.py Поток в работе
+2022-04-18 18:39:43,719 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'boba', 'to': 'biba', 'time': 1650281983.7197065, 'message_text': 'hi'}
+2022-04-18 18:39:44,314 INFO client.py Отправлено сообщение для пользователя biba
+2022-04-18 18:39:44,657 INFO client.py Получено сообщение от пользователя boba: hi
+2022-04-18 18:40:03,729 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: boba
+2022-04-18 18:41:03,559 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'boba', 'to': 'biba', 'time': 1650282063.559684, 'message_text': 'kill him'}
+2022-04-18 18:41:03,575 INFO client.py Отправлено сообщение для пользователя biba
+2022-04-18 18:41:04,216 INFO client.py Получено сообщение от пользователя boba: kill him
+2022-04-18 18:41:18,068 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: boba
+2022-04-18 18:41:35,184 DEBUG utils_log_decorator.py Функция arg_parser с параметрами () , {}, вызвана из модуля __main__
+2022-04-18 18:41:39,921 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: third
+2022-04-18 18:41:39,921 DEBUG client.py Сформировано presence сообщение для пользователя third
+2022-04-18 18:41:39,921 DEBUG utils_log_decorator.py Функция create_presence с параметрами ('third',) , {}, вызвана из модуля __main__
+2022-04-18 18:41:39,952 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-04-18 18:41:39,952 DEBUG utils_log_decorator.py Функция process_response_anc с параметрами ({'response': 200},) , {}, вызвана из модуля __main__
+2022-04-18 18:41:39,952 INFO client.py Установлено соединение с сервером. Принят ответ от сервера: 200 : OK
+2022-04-18 18:41:39,999 DEBUG client.py Запрос списка известных пользователей third
+2022-04-18 18:41:40,486 DEBUG client.py Запрос списка контактов пользователя third
+2022-04-18 18:41:40,486 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1650282100.4864585, 'user': 'third'}
+2022-04-18 18:41:40,970 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-04-18 18:41:40,970 DEBUG client.py Поток в работе
+2022-04-18 18:42:00,709 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'third', 'to': 'boba', 'time': 1650282120.7094483, 'message_text': '2222'}
+2022-04-18 18:42:01,100 INFO client.py Отправлено сообщение для пользователя boba
+2022-04-18 18:42:02,384 INFO client.py Получено сообщение от пользователя third: 2222
+2022-04-18 18:42:19,550 DEBUG client.py Сформирован словарь сообщения: {'action': 'message', 'from': 'third', 'to': 'biba', 'time': 1650282139.550898, 'message_text': '111111'}
+2022-04-18 18:42:19,566 INFO client.py Отправлено сообщение для пользователя biba
+2022-04-18 18:42:19,738 INFO client.py Получено сообщение от пользователя third: 111111
+2022-04-18 18:42:37,099 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: third
+2022-04-18 18:43:00,815 ERROR client.py Попытка отправить сообщение незарегистрированному получателю: third
+2022-04-18 18:43:33,068 CRITICAL client.py Потеряно соединение с сервером
+2022-04-18 18:43:33,282 CRITICAL client.py Потеряно соединение с сервером
+2022-04-18 18:43:34,032 CRITICAL client.py Потеряно соединение с сервером

@@ -296,7 +296,7 @@ def user_list_request(sock, username):
     }
     send_message(sock, req)
     ans = get_message(sock)
-    if RESPONSE in ans and ans[RESPONSE] == 200:
+    if RESPONSE in ans and ans[RESPONSE] == 202:
         return ans[LIST_INFO]
     else:
         raise ServerError
