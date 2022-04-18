@@ -69,7 +69,7 @@ class ClientDB:
         self.session.query(self.Contacts).delete()
         self.session.commit()
 
-    def add_contacts(self, contact):
+    def add_contact(self, contact):
         """ Добавление контакта """
         if not self.session.query(self.Contacts).filter_by(name=contact).count():
             contact_row = self.Contacts(contact)
@@ -129,8 +129,8 @@ class ClientDB:
 if __name__ == '__main__':
     test_bd = ClientDB('test1')
     for item in ['test3', 'test3', 'test5']:
-        test_bd.add_contacts(item)
-    test_bd.add_contacts('test2')
+        test_bd.add_contact(item)
+    test_bd.add_contact('test2')
     test_bd.add_users(['test2', 'test3', 'test4', 'test5', 'test10'])
     test_bd.save_message('test1', 'test2',
                          f'Проверка... Тестовое сообщение от {datetime.now().strftime("%m-%d-%Y, %H:%M")}')
