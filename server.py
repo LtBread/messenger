@@ -291,7 +291,7 @@ def main():
         """ Функция, создающая окно со статистикой клиентов """
         global stat_window
         stat_window = HistoryWindow()
-        stat_window.history_table.setModel(create_start_model(database))
+        stat_window.history_table.setModel(create_stat_model(database))
         stat_window.history_table.resizeColumnsToContents()
         stat_window.history_table.resizeRowsToContents()
         stat_window.show()

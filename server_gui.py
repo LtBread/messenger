@@ -17,7 +17,7 @@ def gui_create_model(database):
         user.setEditable(False)
         ip = QStandardItem(ip)
         ip.setEditable(False)
-        port = QStandardItem(False)
+        port = QStandardItem(port)
         port.setEditable(False)
         time = QStandardItem(str(time.replace(microsecond=0)))  # округление до секунд
         time.setEditable(False)
@@ -25,9 +25,9 @@ def gui_create_model(database):
     return list_table
 
 
-def create_start_model(database):
+def create_stat_model(database):
     """ GUI - реализует заполнение таблицы истории сообщений """
-    hist_list = database.messege_history()
+    hist_list = database.message_history()
 
     # объект модели данных:
     list_table = QStandardItemModel()
@@ -38,11 +38,11 @@ def create_start_model(database):
         user, last_seen, sent, recvd = row
         user = QStandardItem(user)
         user.setEditable(False)
-        last_seen = QStandardItem(last_seen)
+        last_seen = QStandardItem(str(last_seen.replace(microsecond=0)))
         last_seen.setEditable(False)
-        sent = QStandardItem(False)
+        sent = QStandardItem(str(sent))
         sent.setEditable(False)
-        recvd = QStandardItem(False)
+        recvd = QStandardItem(str(recvd))
         recvd.setEditable(False)
         list_table.appendRow([user, last_seen, sent, recvd])
     return list_table
@@ -104,7 +104,7 @@ class HistoryWindow(QDialog):
     def initUI(self):
         # настройки окна
         self.setWindowTitle('Статистика клиентов')
-        self.setFixedSize(600, 700)
+        self.setFixedSize(900, 600)
         self.setAttribute(Qt.WA_DeleteOnClose)
 
         # кнопка закрытия окна
@@ -114,7 +114,7 @@ class HistoryWindow(QDialog):
 
         # собственно история
         self.history_table = QTableView(self)
-        self.history_table.setFixedSize(580, 620)
+        self.history_table.setFixedSize(880, 520)
         self.history_table.move(10, 10)
 
         self.show()
@@ -230,29 +230,29 @@ if __name__ == '__main__':
     # main_window.active_clients_table.resizeColumnsToContents()
     # app.exec_()
 
-    # app = QApplication(sys.argv)
-    # history_window = HistoryWindow()
-    # test_list = QStandardItemModel(history_window)
-    #
-    # test_list.setHorizontalHeaderLabels(['Имя клиента',
-    #                                      'Последний вход',
-    #                                      'Сообщений отправлено',
-    #                                      'Сообщений получено'])
-    #
-    # test_list.appendRow([QStandardItem('test1'),
-    #                      QStandardItem('San Apr 17 14:55:00 2022'),
-    #                      QStandardItem('2'),
-    #                      QStandardItem('3')])
-    #
-    # test_list.appendRow([QStandardItem('test2'),
-    #                      QStandardItem('San Apr 17 14:56:00 2022'),
-    #                      QStandardItem('1'),
-    #                      QStandardItem('2')])
-    #
-    # history_window.history_table.setModel(test_list)
-    # history_window.history_table.resizeColumnsToContents()
-    # app.exec_()
-
     app = QApplication(sys.argv)
-    config_window = ConfigWindow()
+    history_window = HistoryWindow()
+    test_list = QStandardItemModel(history_window)
+
+    test_list.setHorizontalHeaderLabels(['Имя клиента',
+                                         'Последний вход',
+                                         'Сообщений отправлено',
+                                         'Сообщений получено'])
+
+    test_list.appendRow([QStandardItem('test1'),
+                         QStandardItem('San Apr 17 14:55:00 2022'),
+                         QStandardItem('2'),
+                         QStandardItem('3')])
+
+    test_list.appendRow([QStandardItem('test2'),
+                         QStandardItem('San Apr 17 14:56:00 2022'),
+                         QStandardItem('1'),
+                         QStandardItem('2')])
+
+    history_window.history_table.setModel(test_list)
+    history_window.history_table.resizeColumnsToContents()
     app.exec_()
+
+    # app = QApplication(sys.argv)
+    # config_window = ConfigWindow()
+    # app.exec_()
