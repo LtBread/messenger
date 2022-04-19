@@ -7,6 +7,7 @@ MAX_CONNECTIONS = 5  # максимальная очередь подключе�
 MAX_PACKAGE_LENGTH = 1024  # максимальный размер сообщения в байтах
 ENCODING = 'utf-8'  # кодировка проекта
 LOGGING_LEVEL = logging.DEBUG  # текущий уровень логирования
+SERVER_CONFIG = 'server.ini'
 SERVER_DATABASE = 'sqlite:///server_database.db3'
 
 """ основные ключи протокола JIM """
@@ -25,7 +26,13 @@ MESSAGE = 'message'
 MESSAGE_TEXT = 'message_text'
 # RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
 EXIT = 'exit'
+GET_CONTACTS = 'get_contacts'
+LIST_INFO = 'data_list'
+REMOVE_CONTACT = 'remove'
+ADD_CONTACT = 'add'
+USERS_REQUEST = 'get_users'
 
 """ словари - ответы """
 RESPONSE_200 = {RESPONSE: 200}
+RESPONSE_202 = {RESPONSE: 202, LIST_INFO: None}
 RESPONSE_400 = {RESPONSE: 400, ERROR: None}
