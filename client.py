@@ -322,7 +322,7 @@ def remove_contact(sock, username, contact):
 
 def database_load(sock, database, username):
     """ Инициализатор БД.
-    Загружает данные в БД сервера
+    Загружает данные в БД c сервера
     """
     try:
         users_list = user_list_request(sock, username)
