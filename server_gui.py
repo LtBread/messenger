@@ -57,6 +57,9 @@ class MainWindow(QMainWindow):
 
     def initUI(self):
         # кнопка выхода
+        # exitAction = QAction('Выход', self)
+        # exitAction.setShortcut('CTR+Q')
+        # exitAction.triggered.connect(qApp.quit)
         self.exitAction = QAction('Выход', self)
         self.exitAction.setShortcut('CTR+Q')
         self.exitAction.triggered.connect(qApp.quit)
@@ -153,6 +156,7 @@ class ConfigWindow(QDialog):
             dialog = QFileDialog(self)
             path = dialog.getExistingDirectory()
             path = path.replace('/', '\\')
+            self.db_path.clear()
             self.db_path.insert(path)
 
         self.db_path_select.clicked.connect(open_file_dialog)
@@ -183,7 +187,7 @@ class ConfigWindow(QDialog):
         self.ip_label.move(10, 200)
 
         # надпись с напоминанием о пустом поле
-        self.ip_label_note = QLabel('(Оставьте пустым, чтобы \nпринимать соединения с \nлюбых адресов)', self)
+        self.ip_label_note = QLabel('(оставьте пустым, чтобы \nпринимать соединения с \nлюбых адресов)', self)
         self.ip_label_note.setFixedSize(260, 100)
         self.ip_label_note.move(10, 220)
 
