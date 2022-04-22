@@ -1,9 +1,14 @@
-from _datetime import datetime
+import os
+import sys
+from datetime import datetime
 from sqlalchemy import create_engine, Table, Column, Integer, String, Text, MetaData, DateTime
 from sqlalchemy.orm import mapper, sessionmaker
 from pprint import pprint
 
 from common.variables import *
+
+
+sys.path.append('..')
 
 
 class ClientDB:
@@ -13,10 +18,10 @@ class ClientDB:
             self.username = user
 
     class MessageHistory:
-        def __init__(self, from_user, to_user, message):
+        def __init__(self, contact, direction, message):
             self.id = None
-            self.from_user = from_user
-            self.to_user = to_user
+            self.contact = contact
+            self.direction = direction
             self.message = message
             self.date = datetime.now()
 
@@ -31,7 +36,10 @@ class ClientDB:
         Поскольку клиент мультипоточный, то необходимо отключить проверки на подключения с разных потоков,
         иначе sqlite3.ProgrammingError
         """
-        self.database_engine = create_engine(f'sqlite:///client_{name}.db3',
+        path = os.path.dirname(os.path.realpath(__file__))
+        filename = f'client_{name}.db3'
+
+        self.database_engine = create_engine(f'sqlite:///{os.path.join(path, filename)}',
                                              echo=False,
                                              pool_recycle=7200,
                                              connect_args={'check_same_thread': False})
@@ -45,8 +53,8 @@ class ClientDB:
 
         history_table = Table('Message_history', self.metadata,
                               Column('id', Integer, primary_key=True),
-                              Column('from_user', String),
-                              Column('to_user', String),
+                              Column('contact', String),
+                              Column('direction', String),
                               Column('message', Text),
                               Column('date', DateTime)
                               )
@@ -89,9 +97,9 @@ class ClientDB:
             self.session.add(user_row)
         self.session.commit()
 
-    def save_message(self, from_user, to_user, message):
+    def save_message(self, contact, direction, message):
         """ Функция сохранения сообщений """
-        message_row = self.MessageHistory(from_user, to_user, message)
+        message_row = self.MessageHistory(contact, direction, message)
         self.session.add(message_row)
         self.session.commit()
 
@@ -115,14 +123,10 @@ class ClientDB:
             return True
         return False
 
-    def get_history(self, from_who=None, to_who=None):
+    def get_history(self, contact):
         """ Функция возвращает историю переписки """
-        query = self.session.query(self.MessageHistory)
-        if from_who:
-            query = query.filter_by(from_user=from_who)
-        if to_who:
-            query = query.filter_by(to_user=to_who)
-        return [(history_row.from_user, history_row.to_user, history_row.message, history_row.date)
+        query = self.session.query(self.MessageHistory).filter_by(contact=contact)
+        return [(history_row.contact, history_row.direction, history_row.message, history_row.date)
                 for history_row in query.all()]
 
 
@@ -141,10 +145,9 @@ if __name__ == '__main__':
     print(test_bd.get_users())
     print(test_bd.check_user('шпион'))
     print(test_bd.check_user('test2'))
+    print(sorted(test_bd.get_history('test2'), key=lambda item: item[3]))
     print('--------------------------------')
-    pprint(test_bd.get_history('test1', 'test2'))
     pprint(test_bd.get_history('test2'))
-    pprint(test_bd.get_history(to_who='test2'))
     pprint(test_bd.get_history('test3'))
     test_bd.del_contact('test3')
     print(test_bd.get_contacts())

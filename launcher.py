@@ -17,7 +17,7 @@ while True:
 
         # создание клиентов
         for client in range(1, NUM_CLIENTS + 1):
-            PROCESS.append(subprocess.Popen('python client.py', creationflags=subprocess.CREATE_NEW_CONSOLE))
+            PROCESS.append(subprocess.Popen('python __init__.py', creationflags=subprocess.CREATE_NEW_CONSOLE))
 
     elif ACTION == 'x':
         while PROCESS:

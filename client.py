@@ -2,17 +2,15 @@ import sys
 import argparse
 import json
 import time
-import logging
 import threading
 from socket import socket, AF_INET, SOCK_STREAM
 
-import logs.config_client_log
 from errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
 from metaclasses import ClientVerifier
-from client_database import ClientDB
+from client.client_database import ClientDB
 
 # инициализация клиентского логера
 logger = logging.getLogger('client')
@@ -135,7 +133,7 @@ class ClientSender(threading.Thread, metaclass=ClientVerifier):
                           f'от {message[3]}:\n{message[2]}')
 
             elif ask == 'out':
-                history_list = self.database.get_history(from_who=self.account_name)
+                history_list = self.database.get_history(contact=self.account_name)
                 for message in history_list:
                     print(f'\nСообщение пользователю: {message[1]} '
                           f'от {message[3]}:\n{message[2]}')
@@ -220,35 +218,6 @@ class ClientReader(threading.Thread, metaclass=ClientVerifier):
                         logger.error(f'Получено некорректное сообщение от сервера: {message}')
 
 
-@log
-def create_presence(account_name):
-    """
-    Генерирует запрос о присутствии клиента,
-    формирует сообщение в виде словаря для отправки серверу и возвращает его
-    """
-    out = {
-        ACTION: PRESENCE,
-        TIME: time.time(),
-        USER: {ACCOUNT_NAME: account_name}
-    }
-    logger.debug(f'Сформировано {PRESENCE} сообщение для пользователя {account_name}')
-    return out
-
-
-@log
-def process_response_anc(message):
-    """
-    Разбирает ответ сервера на сообщение о присутствии,
-    возвращает 200 в случае успеха, исключение - в случае ошибки
-    """
-    logger.debug(f'Разбор приветственного сообщения от сервера: {message}')
-    if RESPONSE in message:
-        if message[RESPONSE] == 200:
-            return '200 : OK'
-        elif message[RESPONSE] == 400:
-            raise ServerError(f'400: {message[ERROR]}')
-    raise ReqFileMissingError(RESPONSE)
-
 
 def contacts_list_request(sock, name):
     """ Функция запроса списка контактов """
@@ -268,22 +237,6 @@ def contacts_list_request(sock, name):
         raise ServerError
 
 
-def add_contact(sock, username, contact):
-    """ Функция добавления пользователя в список контактов """
-    logger.debug(f'Создание контакта {contact}')
-    req = {
-        ACTION: ADD_CONTACT,
-        TIME: time.time(),
-        USER: username,
-        ACCOUNT_NAME: contact
-    }
-    send_message(sock, req)
-    ans = get_message(sock)
-    if RESPONSE in ans and ans[RESPONSE] == 200:
-        pass
-    else:
-        raise ServerError('Ошибка создания контакта')
-    print('Контакт создан')
 
 
 def user_list_request(sock, username):
@@ -302,22 +255,7 @@ def user_list_request(sock, username):
         raise ServerError
 
 
-def remove_contact(sock, username, contact):
-    """ Удаление пользователя из списка контактов """
-    logger.debug(f'Удаление контакта {contact}')
-    req = {
-        ACTION: REMOVE_CONTACT,
-        TIME: time.time(),
-        USER: username,
-        ACCOUNT_NAME: contact
-    }
-    send_message(sock, req)
-    ans = get_message(sock)
-    if RESPONSE in ans and ans[RESPONSE] == 200:
-        pass
-    else:
-        raise ServerError('Ошибка удаления контакта')
-    print('Контакт удалён')
+
 
 
 def database_load(sock, database, username):
