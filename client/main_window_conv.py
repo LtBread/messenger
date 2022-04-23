@@ -4,8 +4,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainClientWindow:
     def setupUi(self, MainClientWindow):
         MainClientWindow.setObjectName('MainClientWindow')
-        MainClientWindow.resize(800, 900)
-        MainClientWindow.setMinimumSize(QtCore.QSize(800, 900))
+        MainClientWindow.resize(800, 1000)
+        MainClientWindow.setMinimumSize(QtCore.QSize(800, 1000))
 
         # centralwidget
         self.centralwidget = QtWidgets.QWidget(MainClientWindow)
@@ -27,13 +27,13 @@ class Ui_MainClientWindow:
         self.label_history.setGeometry(QtCore.QRect(280, 10, 391, 20))
         self.label_history.setObjectName('label_history')
 
-        self.text_message = QtWidgets.QTextEdit(self.centralwidget)
-        self.text_message.setGeometry(QtCore.QRect(400, 360, 380, 70))
-        self.text_message.setObjectName('text_message')
-
         self.label_new_message = QtWidgets.QLabel(self.centralwidget)
         self.label_new_message.setGeometry(QtCore.QRect(280, 600, 450, 50))
         self.label_new_message.setObjectName('label_new_message')
+
+        self.text_message = QtWidgets.QTextEdit(self.centralwidget)
+        self.text_message.setGeometry(QtCore.QRect(280, 670, 500, 100))
+        self.text_message.setObjectName('text_message')
 
         self.list_contacts = QtWidgets.QListView(self.centralwidget)
         self.list_contacts.setGeometry(QtCore.QRect(10, 40, 250, 400))
@@ -44,11 +44,11 @@ class Ui_MainClientWindow:
         self.list_messages.setObjectName('list_messages')
 
         self.btn_clear = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_clear.setGeometry(QtCore.QRect(280, 670, 180, 40))
+        self.btn_clear.setGeometry(QtCore.QRect(280, 800, 180, 40))
         self.btn_clear.setObjectName('btn_clear')
 
         self.btn_send = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_send.setGeometry(QtCore.QRect(280, 730, 220, 60))
+        self.btn_send.setGeometry(QtCore.QRect(280, 860, 220, 60))
         self.btn_send.setObjectName('btn_send')
 
         MainClientWindow.setCentralWidget(self.centralwidget)

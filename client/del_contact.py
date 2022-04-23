@@ -15,20 +15,20 @@ class DelContactDialog(QDialog):
         super().__init__()
         self.database = database
 
-        self.setFixedSize(350, 120)
+        self.setFixedSize(350, 150)
         self.setWindowTitle('Выберите контакт для удаления: ')
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.setModal(True)
 
-        self.selector_label = QLabel('Выберите контакт для удаления: ', self)
-        self.selector_label.setFixedSize(200, 20)
+        self.selector_label = QLabel('Выберите контакт\nдля удаления: ', self)
+        self.selector_label.setFixedSize(200, 50)
         self.selector_label.move(10, 0)
 
         self.selector = QComboBox(self)
-        self.selector.setFixedSize(100, 30)
-        self.selector.move(60, 60)
+        self.selector.setFixedSize(200, 40)
+        self.selector.move(10, 70)
         # заполнитель контактов для удаления
-        self.selector.addItems(sorted(self.database.get_contacts))
+        self.selector.addItems(sorted(self.database.get_contacts()))
 
         self.btn_ok = QPushButton('Удалить', self)
         self.btn_ok.setFixedSize(100, 30)
@@ -37,7 +37,7 @@ class DelContactDialog(QDialog):
         self.btn_cancel = QPushButton('Отмена', self)
         self.btn_cancel.setFixedSize(100, 30)
         self.btn_cancel.move(230, 60)
-        self.btn_cancel.clicked(self.close)
+        self.btn_cancel.clicked.connect(self.close)
 
 
 if __name__ == '__main__':

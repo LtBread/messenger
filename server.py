@@ -162,7 +162,7 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                 and SENDER in message \
                 and MESSAGE_TEXT in message \
                 and self.names[message[SENDER]] == client:
-            if message[DESTINATION] in self.messages:
+            if message[DESTINATION] in self.names:
                 self.messages.append(message)
                 self.database.process_message(message[SENDER], message[DESTINATION])
                 send_message(client, RESPONSE_200)

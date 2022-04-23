@@ -89,7 +89,7 @@ class ClientMainWindow(QMainWindow):
                 mess = QStandardItem(f'Входящее от {item[3].replace(microsecond=0)}:\n {item[2]}')
                 mess.setEditable(False)
                 mess.setBackground(QBrush(QColor(255, 213, 213)))
-                mess.setTextAlignment(Qt.AligntLeft)
+                mess.setTextAlignment(Qt.AlignLeft)
                 self.history_model.appendRow(mess)
             else:
                 mess = QStandardItem(f'Исходящее от {item[3].replace(microsecond=0)}:\n {item[2]}')

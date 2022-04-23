@@ -16,7 +16,7 @@ class AddContactDialog(QDialog):
         self.transport = transport
         self.database = database
 
-        self.setFixedSize(350, 120)
+        self.setFixedSize(350, 130)
         self.setWindowTitle('Выберите контакт для добавления: ')
         # нужно удалить диалог, если окно было закрыто преждевременно
         self.setAttribute(Qt.WA_DeleteOnClose)
@@ -27,8 +27,12 @@ class AddContactDialog(QDialog):
         self.selector_label.setFixedSize(200, 20)
         self.selector_label.move(10, 0)
 
-        self.btn_refresh = QPushButton('Обновить список', self)
-        self.btn_refresh.setFixedSize(100, 30)
+        self.selector = QComboBox(self)
+        self.selector.setFixedSize(200, 40)
+        self.selector.move(10, 0)
+
+        self.btn_refresh = QPushButton('Обновить\nсписок', self)
+        self.btn_refresh.setFixedSize(100, 60)
         self.btn_refresh.move(60, 60)
 
         self.btn_ok = QPushButton('Добавить', self)
@@ -38,7 +42,7 @@ class AddContactDialog(QDialog):
         self.btn_cancel = QPushButton('Отмена', self)
         self.btn_cancel.setFixedSize(100, 30)
         self.btn_cancel.move(230, 60)
-        self.btn_cancel.clicked(self.close)
+        self.btn_cancel.clicked.connect(self.close)
 
         # заполнение списка возможных контактов
         self.possible_contacts_update()
@@ -62,7 +66,7 @@ class AddContactDialog(QDialog):
         а затем - содержимое предполагаемых контактов
         """
         try:
-            self.transport.user_list_update()
+            self.transport.users_list_update()
         except OSError:
             pass
         else:
