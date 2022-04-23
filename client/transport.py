@@ -1,13 +1,11 @@
 import sys
-import argparse
 import json
 import time
-import logging
 import threading
 from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
+from common.errors import ServerError
 from common.variables import *
 from common.utils import get_message, send_message
 

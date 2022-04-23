@@ -5,7 +5,7 @@ import time
 import threading
 from socket import socket, AF_INET, SOCK_STREAM
 
-from errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
+from common.errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log

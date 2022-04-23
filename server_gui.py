@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
 
         # настройки геометрии основного окна
         self.setFixedSize(800, 600)
-        self.setWindowTitle('Messeger alpha release')
+        self.setWindowTitle('Messeger alpaca release')
 
         # надпись списка клментов
         self.label = QLabel('Список подключенных клиентов: ', self)
