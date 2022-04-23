@@ -55,7 +55,7 @@ class ClientMainWindow(QMainWindow):
 
     def set_disabled_input(self):
         """ Деактивация поля ввода """
-        self.ui.label_new_message.setText('Для выбора получателя дважды кликните по нему в окне контактов')
+        self.ui.label_new_message.setText('Для выбора получателя дважды кликните\n по нему в окне контактов')
         self.ui.text_message.clear()
         if self.history_model:
             self.history_model.clear()
