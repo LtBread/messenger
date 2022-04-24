@@ -1,16 +1,10 @@
 import sys
 import argparse
-import json
-import time
-import threading
-from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5.QtWidgets import QApplication
 
-from common.errors import ReqFileMissingError, ServerError, IncorrectDataRecivedError
+from common.errors import ServerError
 from common.variables import *
-from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
-from metaclasses import ClientVerifier
 from client.client_database import ClientDB
 from client.transport import ClientTransport
 from client.main_window import ClientMainWindow

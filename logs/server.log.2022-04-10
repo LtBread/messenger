@@ -1,0 +1,73 @@
+2022-04-09 20:14:14,737 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:14:14,741 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:15:56,348 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:15:56,348 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:20:10,642 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:20:10,642 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:21:10,990 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:21:10,991 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:21:18,324 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:21:18,324 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:31:11,115 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:31:11,116 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:32:59,727 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:32:59,727 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:33:17,840 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:/projects/messenger-app/messenger/server.py
+2022-04-09 20:33:54,771 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:33:54,772 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:34:00,433 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:34:00,433 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:34:41,008 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:34:41,009 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:34:48,071 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:34:48,071 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:35:08,656 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:35:08,656 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:35:15,048 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:35:15,049 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:40:15,422 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:40:15,422 INFO server.py Сервер в работе, порт для подключений 12, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:41:06,639 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:41:06,639 CRITICAL server.py Попытка запуска сервера с недопустимым портом: 12. Сервер завершается
+2022-04-09 20:41:26,926 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:41:26,927 CRITICAL server.py Попытка запуска сервера с недопустимым портом: 12. Сервер завершается
+2022-04-09 20:41:46,378 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:41:46,378 CRITICAL server.py Попытка запуска сервера с недопустимым портом: 12. Сервер завершается
+2022-04-09 20:42:34,022 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:42:34,022 CRITICAL server.py Попытка запуска сервера с недопустимым портом: 12. Сервер завершается
+2022-04-09 20:51:22,114 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:51:22,114 CRITICAL descriptors.py Попытка запуска сервера с недопустимым портом: 12. Сервер завершается
+2022-04-09 20:51:26,413 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:51:26,414 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-09 20:51:40,735 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-09 20:51:40,735 INFO server.py Сервер в работе, порт для подключений 8000, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 12:38:55,601 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 12:38:55,601 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 12:56:26,005 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 12:56:26,005 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 12:57:38,265 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 12:57:38,265 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 12:57:44,861 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 12:57:44,861 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 12:57:56,381 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 12:57:56,381 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:00:42,203 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:00:42,203 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:03:20,207 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:03:20,207 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:03:37,526 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:03:37,526 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:03:57,025 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:03:57,025 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:12:11,201 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:12:11,201 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:13:49,413 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:13:49,413 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:14:00,596 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:14:00,596 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:14:15,402 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:14:15,402 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:17:17,187 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:17:17,187 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
+2022-04-10 13:22:25,690 DEBUG utils_log_decorator.py Функция arg_parser вызвана из функции main модуля C:\projects\messenger-app\messenger\server.py
+2022-04-10 13:22:25,690 INFO server.py Сервер в работе, порт для подключений 7777, адрес, с которого принимаются подключения , если адрес не указан, принимаются соединения с любых адресов.
