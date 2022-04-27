@@ -11,26 +11,26 @@ class DelUserDialog(QDialog):
         self.server = server
 
         self.setWindowTitle('Удаление пользователя')
-        self.setFixedSize(300, 280)
+        self.setFixedSize(400, 200)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.setModal(True)
 
         self.selector_label = QLabel('Выбирайте пользователя для удаления:', self)
-        self.selector_label.setFixedSize(280, 20)
+        self.selector_label.setFixedSize(380, 40)
         self.selector_label.move(10, 10)
 
         self.selector = QComboBox(self)
-        self.selector.setFixedSize(280, 30)
+        self.selector.setFixedSize(280, 40)
         self.selector.move(10, 50)
 
         self.btn_ok = QPushButton('Удалить', self)
-        self.btn_ok.setFixedSize(100, 30)
-        self.btn_ok.move(290, 100)
+        self.btn_ok.setFixedSize(90, 40)
+        self.btn_ok.move(300, 50)
         self.btn_ok.clicked.connect(self.del_user)
 
         self.btn_cancel = QPushButton('Отмена', self)
-        self.btn_cancel.setFixedSize(100, 30)
-        self.btn_cancel.move(290, 150)
+        self.btn_cancel.setFixedSize(90, 40)
+        self.btn_cancel.move(300, 100)
         self.btn_cancel.clicked.connect(self.close)
 
         self.all_users_fill()

@@ -12,42 +12,42 @@ class RegisterUserDialog(QDialog):
         self.server = server
 
         self.setWindowTitle('Регистрация')
-        self.setFixedSize(300, 280)
+        self.setFixedSize(400, 400)
         self.setModal(True)
         self.setAttribute(Qt.WA_DeleteOnClose)
 
         self.label_username = QLabel('Введите имя пользователя: ', self)
-        self.label_username.setFixedSize(230, 20)
+        self.label_username.setFixedSize(250, 20)
         self.label_username.move(10, 10)
 
         self.client_name = QLineEdit(self)
-        self.client_name.setFixedSize(230, 20)
+        self.client_name.setFixedSize(250, 40)
         self.client_name.move(10, 50)
 
         self.label_passwd = QLabel('Введите пароль: ', self)
-        self.label_passwd.setFixedSize(230, 20)
-        self.label_passwd.move(10, 90)
+        self.label_passwd.setFixedSize(250, 20)
+        self.label_passwd.move(10, 110)
 
         self.client_passwd = QLineEdit(self)
-        self.client_passwd.setFixedSize(230, 20)
-        self.client_passwd.move(10, 130)
+        self.client_passwd.setFixedSize(250, 40)
+        self.client_passwd.move(10, 150)
 
         self.label_conf = QLabel('Подтвердите пароль: ', self)
-        self.label_conf.setFixedSize(230, 20)
-        self.label_conf.move(10, 170)
-
-        self.client_conf = QLineEdit(self)
-        self.label_conf.setFixedSize(230, 20)
+        self.label_conf.setFixedSize(250, 20)
         self.label_conf.move(10, 210)
 
+        self.client_conf = QLineEdit(self)
+        self.client_conf.setFixedSize(250, 40)
+        self.client_conf.move(10, 260)
+
         self.btn_ok = QPushButton('Сохранить', self)
-        self.btn_ok.setFixedSize(90, 30)
-        self.btn_ok.move(10, 250)
+        self.btn_ok.setFixedSize(110, 40)
+        self.btn_ok.move(10, 320)
         self.btn_ok.clicked.connect(self.save_data)
 
         self.btn_cancel = QPushButton('Отменить', self)
-        self.btn_ok.setFixedSize(90, 30)
-        self.btn_cancel.move(200, 250)
+        self.btn_cancel.setFixedSize(110, 40)
+        self.btn_cancel.move(150, 320)
         self.btn_cancel.clicked.connect(self.close)
 
         self.messages = QMessageBox()
