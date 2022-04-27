@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication
 
 from common.errors import ServerError
 from common.variables import *
-from logs.utils_log_decorator import log
+from common.decorators import log
 from client.client_database import ClientDB
 from client.transport import ClientTransport
 from client.main_window import ClientMainWindow

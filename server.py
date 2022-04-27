@@ -7,7 +7,7 @@ from PyQt5.QtCore import QTimer
 
 from common.variables import *
 from common.utils import get_message, send_message
-from logs.utils_log_decorator import log
+from common.decorators import log
 from common.descriptors import Port
 from common.metaclasses import ServerVerifier
 from server.server_database import ServerDB
