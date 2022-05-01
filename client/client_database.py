@@ -12,12 +12,16 @@ sys.path.append('..')
 
 
 class ClientDB:
+    """ Класс - оболочка для работы с базой данных клиента
+        Использует SQLite базу данных, реализован с помощью
+        SQLAlchemy ORM и используется классический подход
+        """
     class KnowUsers:
         def __init__(self, user):
             self.id = None
             self.username = user
 
-    class MessageHistory:
+    class MessageStat:
         def __init__(self, contact, direction, message):
             self.id = None
             self.contact = contact
@@ -67,7 +71,7 @@ class ClientDB:
         self.metadata.create_all(self.database_engine)
 
         mapper(self.KnowUsers, users_table)
-        mapper(self.MessageHistory, history_table)
+        mapper(self.MessageStat, history_table)
         mapper(self.Contacts, contacts_table)
 
         session = sessionmaker(bind=self.database_engine)
@@ -84,6 +88,11 @@ class ClientDB:
             self.session.add(contact_row)
             self.session.commit()
 
+    def contacts_clear(self):
+        """ Метод, очищающий таблицу контактов """
+        self.session.query(self.Contacts).delete()
+        self.session.commit()
+
     def del_contact(self, contact):
         """ Удаление контакта """
         self.session.query(self.Contacts).filter_by(name=contact).delete()
@@ -99,7 +108,7 @@ class ClientDB:
 
     def save_message(self, contact, direction, message):
         """ Функция сохранения сообщений """
-        message_row = self.MessageHistory(contact, direction, message)
+        message_row = self.MessageStat(contact, direction, message)
         self.session.add(message_row)
         self.session.commit()
 
@@ -125,7 +134,7 @@ class ClientDB:
 
     def get_history(self, contact):
         """ Функция возвращает историю переписки """
-        query = self.session.query(self.MessageHistory).filter_by(contact=contact)
+        query = self.session.query(self.MessageStat).filter_by(contact=contact)
         return [(history_row.contact, history_row.direction, history_row.message, history_row.date)
                 for history_row in query.all()]
 
