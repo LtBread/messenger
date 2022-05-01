@@ -1,9 +1,12 @@
 import sys
 import json
 import logging
+import base64
 from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox, QApplication, QListView
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QBrush, QColor
 from PyQt5.QtCore import pyqtSlot, QEvent, Qt
+from Cryptodome.Cipher import PKCS1_OAEP
+from Cryptodome.PublicKey import RSA
 
 from client.main_window_conv import Ui_MainClientWindow
 from client.add_contact import AddContactDialog
@@ -12,15 +15,19 @@ from client.client_database import ClientDB
 from client.client_transport import ClientTransport
 from client.start_dialog import UserNamedDialog
 from common.errors import ServerError
+from common.variables import *
+
+sys.path.append('../')
 
 logger = logging.getLogger('client')
 
 
 class ClientMainWindow(QMainWindow):
-    def __init__(self, database, transport):
+    def __init__(self, database, transport, keys):
         super().__init__()
         self.database = database
         self.transport = transport
+        self.decrypter = PKCS1_OAEP.new(keys)
 
         # загрузка конфигурации окна из дизайнера
         self.ui = Ui_MainClientWindow()
@@ -43,6 +50,8 @@ class ClientMainWindow(QMainWindow):
         self.history_model = None
         self.messages = QMessageBox()
         self.current_chat = None  # текущий контакт
+        self.current_chat_key = None
+        self.encryptor = None
         self.ui.list_messages.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.ui.list_messages.setWordWrap(True)
 
@@ -64,6 +73,10 @@ class ClientMainWindow(QMainWindow):
         self.ui.btn_clear.setDisabled(True)
         self.ui.btn_send.setDisabled(True)
         self.ui.text_message.setDisabled(True)
+
+        self.encryptor = None
+        self.current_chat = None
+        self.current_chat_key = None
 
     def history_list_update(self):
         """ Заполнение истории сообщений """
@@ -107,6 +120,23 @@ class ClientMainWindow(QMainWindow):
 
     def set_active_user(self):
         """ Функция, устанавливающая активного собеседника """
+        # Запрашиваем публичный ключ пользователя и создаём объект шифрования
+        try:
+            self.current_chat_key = self.transport.key_request(self.current_chat)
+            logger.debug(f'Загружен открытый ключ для  {self.current_chat}')
+            if self.current_chat_key:
+                self.encryptor = PKCS1_OAEP.new(RSA.import_key(self.current_chat_key))
+        except (OSError, json.JSONDecodeError):
+            self.current_chat_key = None
+            self.encryptor = None
+            logger.error(f'Не удалось получить ключ для {self.current_chat}')
+
+        # Если ключа нет то ошибка, что не удалось начать чат с пользователем
+        if not self.current_chat_key:
+            self.messages.warning(self, 'Ошибка', 'Для выбранного пользователя нет ключа шифрования')
+            return
+
+        # Ставим надпись и активируем кнопки
         self.ui.label_new_message.setText(f'Введите сообщение для {self.current_chat}: ')
         self.ui.btn_send.setDisabled(False)
         self.ui.btn_clear.setDisabled(False)
@@ -197,8 +227,14 @@ class ClientMainWindow(QMainWindow):
         self.ui.text_message.clear()
         if not message_text:
             return
+
+        # Шифруем сообщение ключом получателя и упаковываем в base64
+        message_text_encrypted = self.encryptor.encrypt(message_text.encode('utf-8'))
+        message_text_encrypted_base64 = base64.b64encode(message_text_encrypted)
+
         try:
-            self.transport.send_message(self.current_chat, message_text)
+            self.transport.send_message(self.current_chat, message_text_encrypted_base64.decode('ascii'))
+            pass
         except ServerError as e:
             self.messages.critical(self, 'Ошибка', e.text)
         except OSError as e:
@@ -215,8 +251,23 @@ class ClientMainWindow(QMainWindow):
             self.history_list_update()
 
     @pyqtSlot(str)
-    def message(self, sender):
-        """ Слот приёма нового сообщения """
+    def message(self, message):
+        """ Слот приёма нового сообщения
+        выполняет дешифровку поступаемых сообщений и их сохранение в истории сообщений
+        Запрашивает пользователя если пришло сообщение не от текущего
+        собеседника. При необходимости меняет собеседника
+        """
+        # Получаем строку байтов
+        encrypted_message = base64.b64encode(message[MESSAGE_TEXT])
+        # Декодируем строку, при ошибке выдаём сообщение и завершаем функцию
+        try:
+            decrypted_message = self.decrypter.decrypt(encrypted_message)
+        except (ValueError, TypeError):
+            self.messages.warning(self, 'Ошибка', 'Ну удалось декодировать сообщение')
+            return
+        # Сохраняем сообщение в базу и обновляем историю сообщений или открываем новый чат
+        self.database.save_message(self.current_chat, 'in', decrypted_message.decode('utf-8'))
+        sender = message[SENDER]
         if sender == self.current_chat:
             self.history_list_update()
         else:
@@ -249,17 +300,29 @@ class ClientMainWindow(QMainWindow):
         self.messages.warning(self, 'Сбой соединения', 'потеряно соединение с сервером')
         self.close()
 
+    @pyqtSlot()
+    def sign_205(self):
+        """ Слот, выполняющий обновление БД по сигналу сервера """
+        if self.current_chat and not self.database.check_user(self.current_chat):
+            self.messages.warning(self, 'Упс', 'Собеседник отключился')
+            self.set_disabled_input()
+            self.current_chat = None
+        self.clients_list_update()
+
     def make_connection(self, trans_obj):
         """ Функция уставонления связи """
         trans_obj.new_message.connect(self.message)
         trans_obj.connection_lost.connect(self.connection_lost)
+        trans_obj.message_205.connect(self.sign_205)
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    from client_database import ClientDB
-    database = ClientDB('test1')
-    from client_transport import ClientTransport
-    transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
-    window = ClientMainWindow(database, transport)
-    exit(app.exec_())
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     from client_database import ClientDB
+#
+#     database = ClientDB('test1')
+#     from client_transport import ClientTransport
+#
+#     transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
+#     window = ClientMainWindow(database, transport)
+#     exit(app.exec_())
