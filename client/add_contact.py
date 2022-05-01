@@ -78,7 +78,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     from client_database import ClientDB
     database = ClientDB('test1')
-    from transport import ClientTransport
+    from client_transport import ClientTransport
     transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
     window = AddContactDialog(transport, database)
     window.show()

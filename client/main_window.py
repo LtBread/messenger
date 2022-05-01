@@ -9,7 +9,7 @@ from client.main_window_conv import Ui_MainClientWindow
 from client.add_contact import AddContactDialog
 from client.del_contact import DelContactDialog
 from client.client_database import ClientDB
-from client.transport import ClientTransport
+from client.client_transport import ClientTransport
 from client.start_dialog import UserNamedDialog
 from common.errors import ServerError
 
@@ -259,7 +259,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     from client_database import ClientDB
     database = ClientDB('test1')
-    from transport import ClientTransport
+    from client_transport import ClientTransport
     transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
     window = ClientMainWindow(database, transport)
     exit(app.exec_())
