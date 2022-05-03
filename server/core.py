@@ -45,7 +45,8 @@ class MessageProcessor(threading.Thread):
             try:
                 client, client_address = self.sock.accept()
             except OSError as e:
-                print(e)
+                # print(e)
+                pass
             else:
                 logger.info(f'Установлено соединение с {client_address}')
                 client.settimeout(5)
@@ -100,19 +101,19 @@ class MessageProcessor(threading.Thread):
         self.sock = transport
         self.sock.listen(MAX_CONNECTIONS)
 
-    def process_message(self, message, listen_socks):
+    def process_message(self, message):
         """
         Функция адресной отправки сообщения определённому клиенту. Принимает сообщение-словарь,
         список зарегистрированных пользователей и слушающие сокеты. Ничего не возвращает
         """
-        if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in listen_socks:
+        if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in self.listen_sockets:
             try:
                 send_message(self.names[message[DESTINATION]], message)
                 logger.info(
                     f'Отправлено сообщение пользователю {message[DESTINATION]} от пользователя {message[SENDER]}')
             except OSError:
                 self.remove_client(message[DESTINATION])
-        elif message[DESTINATION] in self.names and self.names[message[DESTINATION]] not in listen_socks:
+        elif message[DESTINATION] in self.names and self.names[message[DESTINATION]] not in self.listen_sockets:
             logger.error(f'Связь с клиентом {message[DESTINATION]} была потеряна. Соединение закрыто')
             self.remove_client(self.names[message[DESTINATION]])
         else:
@@ -132,23 +133,6 @@ class MessageProcessor(threading.Thread):
                 and TIME in message \
                 and USER in message:
             self.autorize_user(message, client)
-
-            # # если такой пользователь не зарегистрирован, он регистрируется, иначе соединение завершается
-            # if message[USER][ACCOUNT_NAME] not in self.names.keys():
-            #     self.names[message[USER][ACCOUNT_NAME]] = client
-            #     client_ip, client_port = client.getpeername()
-            #     # регистрация пользователя в БД
-            #     self.database.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
-            #     send_message(client, RESPONSE_200)
-            #     with conflag_lock:
-            #         new_connection = True
-            # else:
-            #     response = RESPONSE_400
-            #     response[ERROR] = 'Имя пользователя уже занято'
-            #     send_message(client, response)
-            #     self.clients.remove(client)
-            #     client.close()
-            # return
 
         # если это сообщение, то отправляем получателю
         elif ACTION in message \
@@ -181,14 +165,6 @@ class MessageProcessor(threading.Thread):
                 and ACCOUNT_NAME in message \
                 and self.names[message[ACCOUNT_NAME]] == client:
             self.remove_client(client)
-            # self.database.user_logout(message[ACCOUNT_NAME])
-            # logger.info(f'Клиент {message[ACCOUNT_NAME]} вежливо отключился')
-            # self.clients.remove(self.names[message[ACCOUNT_NAME]])
-            # self.names[message[ACCOUNT_NAME]].close()
-            # del self.names[message[ACCOUNT_NAME]]
-            # with conflag_lock:
-            #     new_connection = True
-            # return
 
         # если это запрос списка контактов клиента
         elif ACTION in message \
@@ -268,7 +244,7 @@ class MessageProcessor(threading.Thread):
                 self.remove_client(client)
 
     def autorize_user(self, message, sock):
-        """ Метод реализации авторизации пользователей """
+        """ Метод, реализующий авторизацию пользователей """
         logger.debug(f'Start auth process for {message[USER]}')
         if message[USER][ACCOUNT_NAME] in self.names.keys():
             response = RESPONSE_400
@@ -303,9 +279,8 @@ class MessageProcessor(threading.Thread):
             random_str = binascii.hexlify(os.urandom(64))
             # В словарь байты нельзя, декодируем (json.dumps -> TypeError)
             message_auth[DATA] = random_str.decode('ascii')
-            message_auth[DATA] = random_str.decode('ascii')
             # Создаём хэш пароля и связки с рандомной строкой, сохраняем серверную версию ключа
-            hash = hmac.new(self.database.get_hach(message[USER][ACCOUNT_NAME]), random_str, 'MD5')
+            hash = hmac.new(self.database.get_hash(message[USER][ACCOUNT_NAME]), random_str, 'MD5')
             digest = hash.digest()
             logger.debug(f'Auth message = {message_auth}')
             try:

@@ -68,7 +68,7 @@ if __name__ == '__main__':
             key.write(keys.export_key())
     else:
         with open(key_file, 'rb') as key:
-            key = RSA.import_key(key.read())
+            keys = RSA.import_key(key.read())
 
     logger.debug('Keys successfully loaded')
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
         message = QMessageBox()
         message.critical(start_dialog, 'Ошибка сервера', e.text)
         exit(1)
-    transport.setDaemon(True)  # setDaemon() is deprecated, set the daemon attribute instead
+    # transport.setDaemon(True)  # setDaemon() is deprecated, set the daemon attribute instead
     transport.start()
 
     del start_dialog

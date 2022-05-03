@@ -33,10 +33,10 @@ class ClientTransport(threading.Thread, QObject):
 
         self.database = database  # работа с БД
         self.username = username  # имя пользователя
-        self.transport = None  # сокет для работы с сервером
-        self.connection_init(port, ip_address)  # установка соединения
         self.passwd = passwd
+        self.transport = None  # сокет для работы с сервером
         self.keys = keys
+        self.connection_init(port, ip_address)  # установка соединения
 
         # обновление списка известных пользователей и контактов
         try:
@@ -125,19 +125,6 @@ class ClientTransport(threading.Thread, QObject):
                 raise ServerError('Потеряно соединение с сервером')
             # logger.info('Сервер принял сообщение о присутствии. Соединение установлено')
 
-    # def create_presence(self):
-    #     """
-    #     Генерирует запрос о присутствии клиента,
-    #     формирует сообщение в виде словаря для отправки серверу и возвращает его
-    #     """
-    #     out = {
-    #         ACTION: PRESENCE,
-    #         TIME: time.time(),
-    #         USER: {ACCOUNT_NAME: self.username}
-    #     }
-    #     logger.debug(f'Сформировано {PRESENCE} сообщение для пользователя {self.username}')
-    #     return out
-
     def process_server_ans(self, message):
         """ Функция, обрабатывающая сообщение от сервера """
         logger.debug(f'Разбор сообщения: {message}')
@@ -164,7 +151,6 @@ class ClientTransport(threading.Thread, QObject):
                 and message[DESTINATION] == self.username:
             logger.debug(f'Получено сообщение от пользователя {message[SENDER]}: '
                          f'{message[MESSAGE_TEXT]}')
-            # self.database.save_message(message[SENDER], 'in', message[MESSAGE_TEXT])
             self.new_message.emit(message)
 
     def contacts_list_update(self):

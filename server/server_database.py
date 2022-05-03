@@ -163,7 +163,7 @@ class ServerDB:
         user = self.session.query(self.AllUsers).filter_by(username=username).first()
         self.session.query(self.ActiveUsers).filter_by(user_id=user.id).delete()
         self.session.query(self.LoginHistory).filter_by(user_id=user.id).delete()
-        self.session.query(self.UsersContacts).filter_by(user_ud=user.id).delete()
+        self.session.query(self.UsersContacts).filter_by(user_id=user.id).delete()
         self.session.query(self.UsersContacts).filter_by(contact=user.id).delete()
         self.session.query(self.UsersHistory).filter_by(user_id=user.id).delete()
         self.session.query(self.AllUsers).filter_by(username=username).delete()

@@ -27,6 +27,7 @@ class UserNamedDialog(QDialog):
         self.client_passwd = QLineEdit(self)
         self.client_passwd.setFixedSize(270, 40)
         self.client_passwd.move(10, 150)
+        self.client_passwd.setEchoMode(QLineEdit.Password)
 
         self.btn_ok = QPushButton('Начать', self)
         self.btn_ok.move(10, 210)

@@ -14,11 +14,9 @@ class MainWindow(QMainWindow):
     def __init__(self, database, server, config):
         super().__init__()
         self.database = database
-        self.server = server
+        self.server_thread = server
         self.config = config
-        self.initUI()
 
-    def initUI(self):
         # кнопка выхода
         # exitAction = QAction('Выход', self)
         # exitAction.setShortcut('CTR+Q')
@@ -31,7 +29,7 @@ class MainWindow(QMainWindow):
         self.refresh_btn = QAction('Обновить список клиентов', self)
         self.show_history_btn = QAction('История клиентов', self)
         self.config_btn = QAction('Настройки сервера', self)
-        self.register_btn = QAction('Регистрация пользователя', self)
+        self.register_btn = QAction('Регистрация', self)
         self.remove_btn = QAction('Удаление пользователя', self)
 
         # статусбар
@@ -48,18 +46,18 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(self.remove_btn)
 
         # настройки геометрии основного окна
-        self.setFixedSize(800, 600)
+        self.setFixedSize(1200, 600)
         self.setWindowTitle('Messeger alpaca release')
 
-        # надпись списка клментов
+        # надпись списка элементов
         self.label = QLabel('Список подключенных клиентов: ', self)
-        self.label.setFixedSize(400, 15)
+        self.label.setFixedSize(400, 20)
         self.label.move(10, 35)
 
         # окно со списком подключенных клиентов
         self.active_clients_table = QTableView(self)
-        self.active_clients_table.setFixedSize(780, 400)
-        self.active_clients_table.move(10, 55)
+        self.active_clients_table.setFixedSize(1180, 400)
+        self.active_clients_table.move(10, 65)
 
         # таймер, обновляющий список раз в указанное время
         self.timer = QTimer()
@@ -76,7 +74,7 @@ class MainWindow(QMainWindow):
         # отображение окна
         self.show()
 
-    def create_user_model(self):
+    def create_users_model(self):
         """ метод заполнения таблицы активных пользователей """
         list_users = self.database.active_users_list()
         list_table = QStandardItemModel()
@@ -102,7 +100,7 @@ class MainWindow(QMainWindow):
         stat_window = StatWindow(self.database)
         stat_window.show()
 
-    def server_cofig(self):
+    def server_config(self):
         """ Метод создания окна с настройками сервера """
         global config_window
         config_window = ConfigWindow(self.config)
@@ -110,7 +108,7 @@ class MainWindow(QMainWindow):
     def reg_user(self):
         """ Метод создания окна регистрации пользователя """
         global reg_window
-        reg_window.RegisterUserDialog(self.database, self.server_thread)
+        reg_window = RegisterUserDialog(self.database, self.server_thread)
         reg_window.show()
 
     def rem_user(self):

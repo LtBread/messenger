@@ -250,7 +250,7 @@ class ClientMainWindow(QMainWindow):
             logger.debug(f'Отправлено сообщение для {self.current_chat}: {message_text}')
             self.history_list_update()
 
-    @pyqtSlot(str)
+    @pyqtSlot(dict)
     def message(self, message):
         """ Слот приёма нового сообщения
         выполняет дешифровку поступаемых сообщений и их сохранение в истории сообщений
@@ -263,7 +263,7 @@ class ClientMainWindow(QMainWindow):
         try:
             decrypted_message = self.decrypter.decrypt(encrypted_message)
         except (ValueError, TypeError):
-            self.messages.warning(self, 'Ошибка', 'Ну удалось декодировать сообщение')
+            self.messages.warning(self, 'Ошибка', 'Не удалось декодировать сообщение')
             return
         # Сохраняем сообщение в базу и обновляем историю сообщений или открываем новый чат
         self.database.save_message(self.current_chat, 'in', decrypted_message.decode('utf-8'))
@@ -290,6 +290,9 @@ class ClientMainWindow(QMainWindow):
                                           QMessageBox.Yes, QMessageBox.No) == QMessageBox.Yes:
                     self.add_contact(sender)
                     self.current_chat = sender
+                    # Нужно заново сохранить сообщение, иначе оно будет потеряно,
+                    # т.к. на момент предыдущего вызова контакта не было.
+                    self.database.save_message(self.current_chat, 'in', decrypted_message.decode('utf-8'))
                     self.set_active_user()
 
     @pyqtSlot()
@@ -301,7 +304,7 @@ class ClientMainWindow(QMainWindow):
         self.close()
 
     @pyqtSlot()
-    def sign_205(self):
+    def sig_205(self):
         """ Слот, выполняющий обновление БД по сигналу сервера """
         if self.current_chat and not self.database.check_user(self.current_chat):
             self.messages.warning(self, 'Упс', 'Собеседник отключился')
@@ -310,10 +313,10 @@ class ClientMainWindow(QMainWindow):
         self.clients_list_update()
 
     def make_connection(self, trans_obj):
-        """ Функция уставонления связи """
+        """ Функция установления связи """
         trans_obj.new_message.connect(self.message)
         trans_obj.connection_lost.connect(self.connection_lost)
-        trans_obj.message_205.connect(self.sign_205)
+        trans_obj.message_205.connect(self.sig_205)
 
 
 # if __name__ == '__main__':
