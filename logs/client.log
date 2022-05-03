@@ -3458,3 +3458,24 @@
 2022-05-03 10:37:07,588 DEBUG client_transport.py Разбор сообщения: {'action': 'message', 'from': '1', 'to': '2', 'time': 1651549027.2908282, 'message_text': 'AYSN/mzpVwnLR0vgkVoBQiVYsHY5Up4CrK523S05I8NFuy5lmdv80Pp18X5sX4VCDEmIX0Ixw3hq4MPVxQWi68w7O2zGEm8RZmSZlt4T1/c5F+d+rkGFTmv/5drUEN0lKm1NbpFzY5PWitF/MMUkYA+1sAl3pXoUzTm4Zm2XpDc2Qr2/02QV7IPmlwEWOUEYq5zgpB0IyIsnf9CeQ5Wj5JGfeXYgnQCybzaObQk4MdClg9oIcbhki5/dU5cKTciYgr2O6y197/RG8/91W7ewKESKC8OVBxNxqzp79zunOfkr5QJ9TyuRVWSWxHzWjcmbB2wsJ3V/nTQu6OEW/tC1xg=='}
 2022-05-03 10:37:07,588 DEBUG client_transport.py Получено сообщение от пользователя 1: AYSN/mzpVwnLR0vgkVoBQiVYsHY5Up4CrK523S05I8NFuy5lmdv80Pp18X5sX4VCDEmIX0Ixw3hq4MPVxQWi68w7O2zGEm8RZmSZlt4T1/c5F+d+rkGFTmv/5drUEN0lKm1NbpFzY5PWitF/MMUkYA+1sAl3pXoUzTm4Zm2XpDc2Qr2/02QV7IPmlwEWOUEYq5zgpB0IyIsnf9CeQ5Wj5JGfeXYgnQCybzaObQk4MdClg9oIcbhki5/dU5cKTciYgr2O6y197/RG8/91W7ewKESKC8OVBxNxqzp79zunOfkr5QJ9TyuRVWSWxHzWjcmbB2wsJ3V/nTQu6OEW/tC1xg==
 2022-05-03 10:37:07,596 DEBUG main_window.py Отправлено сообщение для 2: hi
+2022-05-03 14:30:21,847 INFO client_transport.py Попытка подключения № 1
+2022-05-03 14:30:24,891 INFO client_transport.py Попытка подключения № 2
+2022-05-03 14:43:13,227 DEBUG client.py Using USERNAME = 1, PASSWD = 123456
+2022-05-03 14:43:13,228 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: 1
+2022-05-03 14:43:13,287 DEBUG client.py Keys successfully loaded
+2022-05-03 14:43:13,313 INFO client_transport.py Попытка подключения № 1
+2022-05-03 14:43:13,314 DEBUG client_transport.py Connection established
+2022-05-03 14:43:13,314 DEBUG client_transport.py Соединение с сервером установлено
+2022-05-03 14:43:13,321 DEBUG client_transport.py Passwd hash ready: b'ec90b336c9e8b142d5a7a8c6620c3c7721fa7a338dd9b7e2c43bbb0e2b2ae897f6a38b27dbad7ce4716480858f72babdd45b715ff4911d93abbb0a2b8f238bc9'
+2022-05-03 14:43:13,322 DEBUG client_transport.py Presence message = {'action': 'presence', 'time': 1651563793.3228223, 'user': {'account_name': '1', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxQ3Lx+oCYpP8yJRfHHKV\nULVPpPrdnXoeYrtmwGKoaj8Y27WtcS+QYu2bssxvsFAQfHMm227pGQghrnSpyT59\nzFG5XPjpNcVRtKqmB2ZPHlkEmWGLhBWXDpUJoedFworT13P6MK9dxu+cR12oxD8Y\nbQjENXVYcj3OPDAEGSQ3hKn3U3Y2NnLUYo9Jgx+zXprCB6+0F41fIaWqAi35A5xb\nvQKCWg9Aw/ObINh7s6m0loVIrXJqXLgr1ogYETtZlpT/fzURLSObriIIMARP/u+w\nis41JcjIc+uy03mtu4SdAUKBew/gp4ptXZCyBkwikm3gXmYrT66HidpIzP8tkail\nswIDAQAB\n-----END PUBLIC KEY-----'}}
+2022-05-03 14:43:13,866 DEBUG client_transport.py Server response = {'response': 511, 'bin': 'dcc275b4d72701cb9941adb8fc46fe056cbb87f703efe08b322e542417ec7997b99d445a9b2486933b48ae1e60ee6f7e9d9cefb6197a9c258f73db9c638fd4d7'}
+2022-05-03 14:43:13,866 DEBUG client_transport.py Разбор сообщения: {'response': 200}
+2022-05-03 14:43:13,866 DEBUG client_transport.py Запрос списка известных пользователей 1
+2022-05-03 14:43:14,445 DEBUG client_transport.py Запрос списка контактов для пользователя 1
+2022-05-03 14:43:14,446 DEBUG client_transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1651563794.4460857, 'user': '1'}
+2022-05-03 14:43:14,925 DEBUG client_transport.py получен ответ {'response': 202, 'data_list': ['2']}
+2022-05-03 14:43:14,973 DEBUG client.py Transport ready
+2022-05-03 14:43:14,974 DEBUG client_transport.py Запущен процесс приёма сообщений с сервера
+2022-05-03 14:43:32,978 DEBUG client_transport.py Запрос публичного ключа для 2
+2022-05-03 14:43:33,313 DEBUG main_window.py Загружен открытый ключ для  2
+2022-05-03 14:43:39,229 DEBUG client_transport.py Сокет завершает работу

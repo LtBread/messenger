@@ -2,7 +2,6 @@ import sys
 import logging
 from PyQt5.QtWidgets import QDialog, QLabel, QComboBox, QPushButton, QApplication
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
 
 sys.path.append('../')
@@ -11,6 +10,9 @@ logger = logging.getLogger('client')
 
 
 class AddContactDialog(QDialog):
+    """ Диалог добавления пользователя в список контактов
+    Предлагает пользователю список возможных контактов и добавляет выбранный в контакты
+    """
     def __init__(self, transport, database):
         super().__init__()
         self.transport = transport
@@ -79,7 +81,7 @@ if __name__ == '__main__':
     from client_database import ClientDB
     database = ClientDB('test1')
     from client_transport import ClientTransport
-    transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
-    window = AddContactDialog(transport, database)
+    transport = ClientTransport(7777, '127.0.0.1', database, 'test1', '123456', None)
+    window = AddContactDialog(None, None)
     window.show()
     app.exec_()

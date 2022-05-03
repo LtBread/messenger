@@ -1,19 +1,15 @@
 import sys
 import json
-import logging
 import base64
-from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox, QApplication, QListView
+from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QBrush, QColor
-from PyQt5.QtCore import pyqtSlot, QEvent, Qt
+from PyQt5.QtCore import pyqtSlot, Qt
 from Cryptodome.Cipher import PKCS1_OAEP
 from Cryptodome.PublicKey import RSA
 
 from client.main_window_conv import Ui_MainClientWindow
 from client.add_contact import AddContactDialog
 from client.del_contact import DelContactDialog
-from client.client_database import ClientDB
-from client.client_transport import ClientTransport
-from client.start_dialog import UserNamedDialog
 from common.errors import ServerError
 from common.variables import *
 
@@ -23,6 +19,9 @@ logger = logging.getLogger('client')
 
 
 class ClientMainWindow(QMainWindow):
+    """ Класс - основное окно пользователя
+    Содержит всю основную логику работы клиентского модуля
+    """
     def __init__(self, database, transport, keys):
         super().__init__()
         self.database = database
@@ -34,7 +33,6 @@ class ClientMainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.menu_exit.triggered.connect(qApp.exit)  # кнопка "Выход"
-
         self.ui.btn_send.clicked.connect(self.send_message)  # кнопка "Отправить сообщение"
 
         # добавить контакт
@@ -113,13 +111,13 @@ class ClientMainWindow(QMainWindow):
             self.ui.list_messages.scrollToBottom()
 
     def select_active_user(self):
-        """ Функция-обработчик двойного клика поп контакту """
+        """ Обработчик двойного клика поп контакту """
         # выбранный пользователем контакт находится в выделенном элементе в QListView
         self.current_chat = self.ui.list_contacts.currentIndex().data()
         self.set_active_user()  # вызов основной функции
 
     def set_active_user(self):
-        """ Функция, устанавливающая активного собеседника """
+        """ Устанавливает активного собеседника """
         # Запрашиваем публичный ключ пользователя и создаём объект шифрования
         try:
             self.current_chat_key = self.transport.key_request(self.current_chat)
@@ -145,7 +143,7 @@ class ClientMainWindow(QMainWindow):
         self.history_list_update()  # заполнение окна истории сообщений
 
     def clients_list_update(self):
-        """ Функция, обновляющая список контактов """
+        """ Обновляет список контактов """
         contacts_list = self.database.get_contacts()
         self.contacts_model = QStandardItemModel()
         for i in sorted(contacts_list):
@@ -155,22 +153,22 @@ class ClientMainWindow(QMainWindow):
         self.ui.list_contacts.setModel(self.contacts_model)
 
     def add_contact_window(self):
-        """ Функция добавления контакта """
+        """ Создаёт диалог добавления контакта """
         global select_dialog
         select_dialog = AddContactDialog(self.transport, self.database)
         select_dialog.btn_ok.clicked.connect(lambda: self.add_contact_action(select_dialog))
         select_dialog.show()
 
     def add_contact_action(self, item):
-        """ Функция-обработчик добавления контакта,
-        сообщает серверу, обновляет таблицу и список контактов
-        """
+        """ Обработчик нажатия кнопки "Добавить" """
         new_contact = item.selector.currentText()
         self.add_contact(new_contact)
         item.close()
 
     def add_contact(self, new_contact):
-        """ Функция добавления контакта в БД """
+        """ Добавляет контакт в БД
+        После обновления БД обновляет содержимое окна
+        """
         try:
             self.transport.add_contact(new_contact)
         except ServerError as e:
@@ -189,15 +187,15 @@ class ClientMainWindow(QMainWindow):
             self.messages.information(self, 'Успех', 'Контакт успешно добавлен')
 
     def delete_contact_window(self):
-        """ Функция удаления контакта """
+        """ Создаёт диалог удаления контакта """
         global remove_dialog
         remove_dialog = DelContactDialog(self.database)
         remove_dialog.btn_ok.clicked.connect(lambda: self.delete_contact(remove_dialog))
         remove_dialog.show()
 
     def delete_contact(self, item):
-        """ Функция-обработчик удаления контакта,
-        сообщает на сервер, обновляет таблицу контактов
+        """ Обработчик удаления контакта из серверной и клиентской БД
+        После обновления БД обновляет содержимое окна
         """
         selected = item.selector.currentText()
         try:
@@ -221,7 +219,7 @@ class ClientMainWindow(QMainWindow):
                 self.set_disabled_input()
 
     def send_message(self):
-        """ Функция отправки сообщения пользователю """
+        """ Отправляет зашифрованное сообщение текущему собеседнику """
         # Текст в поле, проверяем что поле не пустое затем забирается сообщение и поле очищается
         message_text = self.ui.text_message.toPlainText()
         self.ui.text_message.clear()
@@ -253,9 +251,9 @@ class ClientMainWindow(QMainWindow):
     @pyqtSlot(dict)
     def message(self, message):
         """ Слот приёма нового сообщения
-        выполняет дешифровку поступаемых сообщений и их сохранение в истории сообщений
-        Запрашивает пользователя если пришло сообщение не от текущего
-        собеседника. При необходимости меняет собеседника
+        Выполняет дешифровку поступивших сообщений и их сохранение в истории сообщений
+        Запрашивает пользователя, если пришло сообщение не от текущего собеседника
+        При необходимости меняет собеседника
         """
         # Получаем строку байтов
         encrypted_message = base64.b64encode(message[MESSAGE_TEXT])
@@ -313,19 +311,7 @@ class ClientMainWindow(QMainWindow):
         self.clients_list_update()
 
     def make_connection(self, trans_obj):
-        """ Функция установления связи """
+        """ Обеспечивает связку сигналов и слотов """
         trans_obj.new_message.connect(self.message)
         trans_obj.connection_lost.connect(self.connection_lost)
         trans_obj.message_205.connect(self.sig_205)
-
-
-# if __name__ == '__main__':
-#     app = QApplication(sys.argv)
-#     from client_database import ClientDB
-#
-#     database = ClientDB('test1')
-#     from client_transport import ClientTransport
-#
-#     transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
-#     window = ClientMainWindow(database, transport)
-#     exit(app.exec_())

@@ -10,7 +10,6 @@ from server.del_user import DelUserDialog
 
 class MainWindow(QMainWindow):
     """ Класс основного окна """
-
     def __init__(self, database, server, config):
         super().__init__()
         self.database = database
@@ -18,9 +17,6 @@ class MainWindow(QMainWindow):
         self.config = config
 
         # кнопка выхода
-        # exitAction = QAction('Выход', self)
-        # exitAction.setShortcut('CTR+Q')
-        # exitAction.triggered.connect(qApp.quit)
         self.exitAction = QAction('Выход', self)
         self.exitAction.setShortcut('CTR+Q')
         self.exitAction.triggered.connect(qApp.quit)
@@ -75,7 +71,7 @@ class MainWindow(QMainWindow):
         self.show()
 
     def create_users_model(self):
-        """ метод заполнения таблицы активных пользователей """
+        """ Метод заполнения таблицы активных пользователей """
         list_users = self.database.active_users_list()
         list_table = QStandardItemModel()
         list_table.setHorizontalHeaderLabels(['Имя клиента', 'IP адрес', 'Порт', 'Время подключения'])

@@ -1,8 +1,8 @@
-# LAUNCHER НЕ РАБОТАЕТ
 import subprocess
 
 
 def main():
+    """ Функция для тестового пуска приложения """
     process = []
     while True:
         action = input('Выберете действие: q - выход, '

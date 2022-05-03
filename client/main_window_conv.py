@@ -1,7 +1,8 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 
 class Ui_MainClientWindow(object):
+    """ Класс-конфигуратор основного окна клиента """
     def setupUi(self, MainClientWindow):
         MainClientWindow.setObjectName('MainClientWindow')
         MainClientWindow.resize(800, 1000)
