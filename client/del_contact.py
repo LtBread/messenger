@@ -27,8 +27,6 @@ class DelContactDialog(QDialog):
         self.selector = QComboBox(self)
         self.selector.setFixedSize(200, 40)
         self.selector.move(10, 70)
-        # заполнитель контактов для удаления
-        self.selector.addItems(sorted(self.database.get_contacts()))
 
         self.btn_ok = QPushButton('Удалить', self)
         self.btn_ok.setFixedSize(100, 30)
@@ -39,15 +37,19 @@ class DelContactDialog(QDialog):
         self.btn_cancel.move(230, 60)
         self.btn_cancel.clicked.connect(self.close)
 
+        # заполнитель контактов для удаления
+        self.selector.addItems(sorted(self.database.get_contacts()))
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    from client_database import ClientDB
-    database = ClientDB('test1')
-    window = DelContactDialog(database)
-    database.add_contact('test1')
-    database.add_contact('test2')
-    print(database.get_contacts())
-    window.selector.addItems(sorted(database.get_contacts()))
+    # from client_database import ClientDB
+    # database = ClientDB('test1')
+    window = DelContactDialog(None)
+    # window = DelContactDialog(database)
+    # database.add_contact('test1')
+    # database.add_contact('test2')
+    # print(database.get_contacts())
+    # window.selector.addItems(sorted(database.get_contacts()))
     window.show()
     app.exec_()
