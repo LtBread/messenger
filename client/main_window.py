@@ -256,7 +256,7 @@ class ClientMainWindow(QMainWindow):
         При необходимости меняет собеседника
         """
         # Получаем строку байтов
-        encrypted_message = base64.b64encode(message[MESSAGE_TEXT])
+        encrypted_message = base64.b64decode(message[MESSAGE_TEXT])
         # Декодируем строку, при ошибке выдаём сообщение и завершаем функцию
         try:
             decrypted_message = self.decrypter.decrypt(encrypted_message)
