@@ -12,7 +12,7 @@
 #
 import os
 import sys
-path = os.path.dirname(os.path.dirname(os.path.abspath('.')))
+path = os.path.dirname(os.path.dirname(os.path.abspath('')))
 sys.path.insert(0, path)
 
 

@@ -1,8 +1,7 @@
 import os
 import sys
-import logging
 import logging.handlers
-from common.variables import LOGGING_LEVEL, ENCODING
+from client_dist.client.common.variables import LOGGING_LEVEL, ENCODING
 
 sys.path.append('../')
 

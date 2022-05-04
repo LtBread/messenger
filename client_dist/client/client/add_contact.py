@@ -4,8 +4,6 @@ from PyQt5.QtWidgets import QDialog, QLabel, QComboBox, QPushButton, QApplicatio
 from PyQt5.QtCore import Qt
 
 
-sys.path.append('../')
-
 logger = logging.getLogger('client')
 
 
@@ -74,14 +72,3 @@ class AddContactDialog(QDialog):
         else:
             logger.debug('Обновление списка пользователей с сервера выполнено')
             self.possible_contacts_update()
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    from client_database import ClientDB
-    database = ClientDB('test1')
-    from client_transport import ClientTransport
-    transport = ClientTransport(7777, '127.0.0.1', database, 'test1', '123456', None)
-    window = AddContactDialog(None, None)
-    window.show()
-    app.exec_()

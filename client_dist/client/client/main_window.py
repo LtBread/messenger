@@ -1,19 +1,19 @@
 import sys
 import json
 import base64
+import logging
 from PyQt5.QtWidgets import QMainWindow, qApp, QMessageBox
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QBrush, QColor
 from PyQt5.QtCore import pyqtSlot, Qt
 from Cryptodome.Cipher import PKCS1_OAEP
 from Cryptodome.PublicKey import RSA
 
-from client.main_window_conv import Ui_MainClientWindow
-from client.add_contact import AddContactDialog
-from client.del_contact import DelContactDialog
-from common.errors import ServerError
-from common.variables import *
+from client_dist.client.common.variables import *
+from client_dist.client.client.main_window_conv import Ui_MainClientWindow
+from client_dist.client.client.add_contact import AddContactDialog
+from client_dist.client.client.del_contact import DelContactDialog
+from client_dist.client.common.errors import ServerError
 
-sys.path.append('../')
 
 logger = logging.getLogger('client')
 

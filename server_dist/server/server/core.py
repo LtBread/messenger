@@ -7,10 +7,9 @@ import binascii
 import threading
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 
-from common.descriptors import Port
-from common.variables import *
-from common.utils import send_message, get_message
-from common.decorators import login_required
+from client_dist.client.common.descriptors import Port
+from client_dist.client.common.utils import send_message, get_message
+from client_dist.client.common.decorators import login_required
 
 
 sys.path.append('../../../')

@@ -5,8 +5,7 @@ import configparser
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 
-from common.variables import *
-from common.decorators import log
+from client_dist.client.common.decorators import log
 from server_dist.server.server.core import MessageProcessor
 from server_dist.server.server.server_database import ServerDB
 from server_dist.server.server.main_window import MainWindow

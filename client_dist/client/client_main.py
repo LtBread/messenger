@@ -1,16 +1,17 @@
 import os
 import sys
 import argparse
+import logging
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from Cryptodome.PublicKey import RSA
 
-from common.errors import ServerError
-from common.variables import *
-from common.decorators import log
-from client.client_database import ClientDB
-from client.client_transport import ClientTransport
-from client.main_window import ClientMainWindow
-from client.start_dialog import UserNamedDialog
+from client_dist.client.common.variables import *
+from client_dist.client.common.errors import ServerError
+from client_dist.client.common.decorators import log
+from client_dist.client.client.client_database import ClientDB
+from client_dist.client.client.client_transport import ClientTransport
+from client_dist.client.client.main_window import ClientMainWindow
+from client_dist.client.client.start_dialog import UserNamedDialog
 
 # инициализация клиентского логера
 logger = logging.getLogger('client')

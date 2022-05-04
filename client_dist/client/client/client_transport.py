@@ -5,14 +5,14 @@ import time
 import threading
 import hmac
 import hashlib
+import logging
 from socket import socket, AF_INET, SOCK_STREAM
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from common.errors import ServerError
-from common.variables import *
-from common.utils import get_message, send_message
+from client_dist.client.common.variables import *
+from client_dist.client.common.errors import ServerError
+from client_dist.client.common.utils import get_message, send_message
 
-sys.path.append('../')
 
 logger = logging.getLogger('client')
 sock_lock = threading.Lock()

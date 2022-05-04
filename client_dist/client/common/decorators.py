@@ -3,8 +3,6 @@ import socket
 import logging
 
 
-sys.path.append('../')
-
 if sys.argv[0].find('__init__.py') == -1:
     logger = logging.getLogger('server')
 else:
@@ -35,7 +33,7 @@ def login_required(func):
         # проверяем, что первый аргумент - экземпляр MessageProcessor
         # импортить необходимо тут, иначе ошибка рекурсивного импорта.
         from server_dist.server.server import MessageProcessor
-        from common.variables import ACTION, PRESENCE
+        from client_dist.client.common.variables import ACTION, PRESENCE
         if isinstance(args[0], MessageProcessor):
             found = False
             for arg in args:

@@ -42,9 +42,3 @@ class UserNamedDialog(QDialog):
         if self.client_name.text() and self.client_passwd.text():
             self.ok_pressed = True
             qApp.exit()
-
-
-if __name__ == '__main__':
-    app = QApplication([])
-    dial = UserNamedDialog()
-    app.exec_()

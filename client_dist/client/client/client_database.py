@@ -3,10 +3,6 @@ import sys
 from datetime import datetime
 from sqlalchemy import create_engine, Table, Column, Integer, String, Text, MetaData, DateTime
 from sqlalchemy.orm import mapper, sessionmaker
-from pprint import pprint
-
-
-sys.path.append('..')
 
 
 class ClientDB:

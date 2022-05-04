@@ -285,10 +285,10 @@ class ServerDB:
 
 if __name__ == '__main__':
     test_db = ServerDB('../../../server_database.db3')
-    test_db.user_login('client1', '192.168.1.4', 7777, 123456)
+    test_db.user_login('client', '192.168.1.4', 7777, 123456)
     test_db.user_login('client2', '192.168.1.5', 7778, 123456)
 
     print('---------Отладка----------------')
     pprint(test_db.users_list())
-    test_db.process_message('client1', 'client2')
+    test_db.process_message('client', 'client2')
     print(test_db.message_history())

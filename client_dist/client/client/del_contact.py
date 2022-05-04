@@ -4,8 +4,6 @@ from PyQt5.QtWidgets import QDialog, QLabel, QComboBox, QPushButton, QApplicatio
 from PyQt5.QtCore import Qt
 
 
-sys.path.append('../')
-
 logger = logging.getLogger('client')
 
 
@@ -41,10 +39,3 @@ class DelContactDialog(QDialog):
 
         # заполнитель контактов для удаления
         self.selector.addItems(sorted(self.database.get_contacts()))
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = DelContactDialog(None)
-    window.show()
-    app.exec_()

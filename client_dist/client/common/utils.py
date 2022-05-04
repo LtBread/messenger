@@ -1,11 +1,8 @@
 import sys
 import json
 
-from common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from common.decorators import log
-
-
-sys.path.append('../')
+from client_dist.client.common.variables import MAX_PACKAGE_LENGTH, ENCODING
+from client_dist.client.common.decorators import log
 
 
 @log
