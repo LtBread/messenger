@@ -1,17 +1,10 @@
-import sys
 import argparse
-import time
 import select
-import logging
 import threading
 import configparser
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
-from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtCore import QTimer
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
-import logs.config_server_log
-from errors import IncorrectDataRecivedError
 from common.variables import *
 from common.utils import get_message, send_message
 from logs.utils_log_decorator import log
@@ -60,8 +53,10 @@ class Server(threading.Thread, metaclass=ServerVerifier):
 
     def run(self):
         # инициализация сокета
+        global new_connection
         self.init_socket()
 
+        # основной цикл сервера
         while True:
             # ожидание подключения, если таймаут вышел, срабатывает исключение
             try:
@@ -98,6 +93,8 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                                 del self.names[name]
                                 break
                         self.clients.remove(client_with_message)
+                        with conflag_lock:
+                            new_connection = True
 
             # если есть сообщения, обрабатывается каждое
             for message in self.messages:
@@ -109,6 +106,8 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                     self.clients.remove(self.names[message[DESTINATION]])
                     self.database.user_logout(message[DESTINATION])
                     del self.names[message[DESTINATION]]
+                    with conflag_lock:
+                        new_connection = True
             self.messages.clear()
 
     def process_message(self, message, listen_socks):
@@ -142,10 +141,8 @@ class Server(threading.Thread, metaclass=ServerVerifier):
             if message[USER][ACCOUNT_NAME] not in self.names.keys():
                 self.names[message[USER][ACCOUNT_NAME]] = client
                 client_ip, client_port = client.getpeername()
-
                 # регистрация пользователя в БД
                 self.database.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
-
                 send_message(client, RESPONSE_200)
                 with conflag_lock:
                     new_connection = True
@@ -157,7 +154,7 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                 client.close()
             return
 
-        # если это сообщение, то добавляет в очередь сообщений, ответ не требуется
+        # если это сообщение, то добавляет в очередь сообщений, ответ теперь требуется
         elif ACTION in message \
                 and message[ACTION] == MESSAGE \
                 and DESTINATION in message \
@@ -165,8 +162,14 @@ class Server(threading.Thread, metaclass=ServerVerifier):
                 and SENDER in message \
                 and MESSAGE_TEXT in message \
                 and self.names[message[SENDER]] == client:
-            self.messages.append(message)
-            self.database.process_message(message[SENDER], message[DESTINATION])
+            if message[DESTINATION] in self.names:
+                self.messages.append(message)
+                self.database.process_message(message[SENDER], message[DESTINATION])
+                send_message(client, RESPONSE_200)
+            else:
+                response = RESPONSE_400
+                response[ERROR] = 'Пользователь не зарегистрирован на сервере'
+                send_message(client, response)
             return
 
         # если клиент выходит
@@ -227,6 +230,22 @@ class Server(threading.Thread, metaclass=ServerVerifier):
             return
 
 
+def config_load():
+    """ Загрузка файла конфигурации сервера """
+    config = configparser.ConfigParser()
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    config.read(f"{dir_path}/{'server.ini'}")
+    # если конфиг загружен правильно - запуск, иначе конфиг по умолчанию.
+    if 'SETTINGS' in config:
+        return config
+    else:
+        config.add_section('SETTINGS')
+        config.set('SETTINGS', 'default_port', str(DEFAULT_PORT))
+        config.set('SETTINGS', 'listen_address', '')
+        config.set('SETTINGS', 'database_path', '')
+        config.set('SETTINGS', 'database_file', 'server_database.db3')
+        return config
+
 @log
 def arg_parser(default_port, default_address):
     """ Парсер аргументов командной строки """
@@ -242,10 +261,7 @@ def arg_parser(default_port, default_address):
 def main():
     """ Основная функция работы сервера """
     # загрузка файла конфигурации сервера
-    config = configparser.ConfigParser()
-
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    config.read(f"{dir_path}/{'server.ini'}")
+    config = config_load()
 
     # загружает параметры командной строки
     listen_address, listen_port = arg_parser(
@@ -321,7 +337,8 @@ def main():
             if 1023 < port < 65536:
                 config['SETTINGS']['default_port'] = str(port)
                 print(port)
-                with open('server.ini', 'w') as conf:
+                dir_path = os.path.dirname(os.path.realpath(__file__))
+                with open(f"{dir_path}/{'server.ini'}", 'w') as conf:
                     config.write(conf)
                     message.information(config_window, 'OK', 'Настройки успешно сохранены')
             else:
@@ -339,8 +356,6 @@ def main():
 
     # запуск GUI
     server_app.exec_()
-
-    # print_help()
 
 
 if __name__ == '__main__':

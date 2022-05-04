@@ -2,7 +2,7 @@ import os
 import sys
 import unittest
 
-from errors import ReqFileMissingError
+from common.errors import ReqFileMissingError
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR
 from client import create_presence, process_response_anc
 

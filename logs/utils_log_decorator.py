@@ -3,7 +3,7 @@ import logging
 import logs.config_server_log
 import logs.config_client_log
 
-if sys.argv[0].find('client.py') == -1:
+if sys.argv[0].find('__init__.py') == -1:
     logger = logging.getLogger('server')
 else:
     logger = logging.getLogger('client')

@@ -7,6 +7,7 @@ from common.variables import *
 
 
 class ServerDB:
+    """ Класс серверной БД """
     class AllUsers:
         def __init__(self, username):
             self.id = None
@@ -58,6 +59,7 @@ class ServerDB:
                                 Column('username', String, unique=True),
                                 Column('last_login', DateTime)
                                 )
+
         active_users_table = Table('Active_users', self.metadata,
                                    Column('id', Integer, primary_key=True),
                                    Column('user_id', ForeignKey('Users.id'), unique=True),
@@ -65,6 +67,7 @@ class ServerDB:
                                    Column('port', Integer),
                                    Column('login_time', DateTime)
                                    )
+
         login_history_table = Table('Login_history', self.metadata,
                                     Column('id', Integer, primary_key=True),
                                     Column('user_id', ForeignKey('Users.id')),
@@ -97,8 +100,8 @@ class ServerDB:
         mapper(self.UsersHistory, users_history_table)
 
         # создание сессии
-        Session = sessionmaker(bind=self.database_engine)
-        self.session = Session()
+        session = sessionmaker(bind=self.database_engine)
+        self.session = session()
 
         # перед установкой соединения необходимо очистить таблицу активных пользователей
         self.session.query(self.ActiveUsers).delete()
@@ -177,7 +180,8 @@ class ServerDB:
 
         # удаление
         self.session.query(self.UsersContacts).filter(
-            self.UsersContacts.user_id == user.id, self.UsersContacts.contact == contact.id
+            self.UsersContacts.user_id == user.id,
+            self.UsersContacts.contact == contact.id
         ).delete()
         self.session.commit()
 
