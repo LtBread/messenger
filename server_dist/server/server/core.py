@@ -13,7 +13,7 @@ from common.utils import send_message, get_message
 from common.decorators import login_required
 
 
-sys.path.append('../')
+sys.path.append('../../../')
 
 logger = logging.getLogger('server')
 

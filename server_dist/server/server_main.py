@@ -7,9 +7,9 @@ from PyQt5.QtCore import Qt
 
 from common.variables import *
 from common.decorators import log
-from server.core import MessageProcessor
-from server.server_database import ServerDB
-from server.main_window import MainWindow
+from server_dist.server.server.core import MessageProcessor
+from server_dist.server.server.server_database import ServerDB
+from server_dist.server.server.main_window import MainWindow
 
 # инициализация клиентского логера
 logger = logging.getLogger('server')

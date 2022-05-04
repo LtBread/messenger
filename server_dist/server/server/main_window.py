@@ -2,10 +2,10 @@ from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QLabel, QTableView
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import QTimer
 
-from server.stat_window import StatWindow
-from server.config_window import ConfigWindow
-from server.add_user import RegisterUserDialog
-from server.del_user import DelUserDialog
+from server_dist.server.server.stat_window import StatWindow
+from server_dist.server.server.config_window import ConfigWindow
+from server_dist.server.server.add_user import RegisterUserDialog
+from server_dist.server.server.del_user import DelUserDialog
 
 
 class MainWindow(QMainWindow):

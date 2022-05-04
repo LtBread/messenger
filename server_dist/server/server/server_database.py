@@ -284,7 +284,7 @@ class ServerDB:
 
 
 if __name__ == '__main__':
-    test_db = ServerDB('../server_database.db3')
+    test_db = ServerDB('../../../server_database.db3')
     test_db.user_login('client1', '192.168.1.4', 7777, 123456)
     test_db.user_login('client2', '192.168.1.5', 7778, 123456)
 
