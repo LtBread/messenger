@@ -5,14 +5,14 @@ import select
 import hmac
 import binascii
 import threading
-import logging
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 
-from server_dist.server.common.variables import *
-from server_dist.server.common.descriptors import Port
-from server_dist.server.common.utils import send_message, get_message
-from server_dist.server.common.decorators import login_required
+from client_dist.client.common.descriptors import Port
+from client_dist.client.common.utils import send_message, get_message
+from client_dist.client.common.decorators import login_required
 
+
+sys.path.append('../../../')
 
 logger = logging.getLogger('server')
 
