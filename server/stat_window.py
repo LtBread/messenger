@@ -54,4 +54,3 @@ class StatWindow(QDialog):
         self.stat_table.setModel(data_list)
         self.stat_table.resizeColumnsToContents()
         self.stat_table.resizeRowsToContents()
-

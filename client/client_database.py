@@ -5,8 +5,6 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, Text, Meta
 from sqlalchemy.orm import mapper, sessionmaker
 from pprint import pprint
 
-from common.variables import *
-
 
 sys.path.append('..')
 
@@ -17,11 +15,13 @@ class ClientDB:
         SQLAlchemy ORM и используется классический подход
         """
     class KnowUsers:
+        """ Класс - отображение известных пользователей """
         def __init__(self, user):
             self.id = None
             self.username = user
 
     class MessageStat:
+        """ Класс - отображение статистики сообщений """
         def __init__(self, contact, direction, message):
             self.id = None
             self.contact = contact
@@ -30,6 +30,7 @@ class ClientDB:
             self.date = datetime.now()
 
     class Contacts:
+        """ Класс - отображение списка контактов """
         def __init__(self, contact):
             self.id = None
             self.name = contact
@@ -89,7 +90,7 @@ class ClientDB:
             self.session.commit()
 
     def contacts_clear(self):
-        """ Метод, очищающий таблицу контактов """
+        """ Очищение списка контактов """
         self.session.query(self.Contacts).delete()
         self.session.commit()
 
@@ -99,7 +100,7 @@ class ClientDB:
         self.session.commit()
 
     def add_users(self, users_list):
-        """ Функция добавления известных пользователей """
+        """ Добавление известных пользователей """
         self.session.query(self.KnowUsers).delete()
         for user in users_list:
             user_row = self.KnowUsers(user)
@@ -107,7 +108,7 @@ class ClientDB:
         self.session.commit()
 
     def save_message(self, contact, direction, message):
-        """ Функция сохранения сообщений """
+        """ Сохранение сообщений """
         message_row = self.MessageStat(contact, direction, message)
         self.session.add(message_row)
         self.session.commit()
@@ -121,42 +122,19 @@ class ClientDB:
         return [user[0] for user in self.session.query(self.KnowUsers.username).all()]
 
     def check_contact(self, contact):
-        """ Функция проверяет наличие пользователя в таблице контактов """
+        """ Проверяет наличие пользователя в таблице контактов """
         if self.session.query(self.Contacts).filter_by(name=contact).count():
             return True
         return False
 
     def check_user(self, user):
-        """ Функция проверяет наличие пользователя в таблице известных пользователей """
+        """ Проверяет наличие пользователя в таблице известных пользователей """
         if self.session.query(self.KnowUsers).filter_by(username=user).count():
             return True
         return False
 
     def get_history(self, contact):
-        """ Функция возвращает историю переписки """
+        """ Возвращает историю переписки """
         query = self.session.query(self.MessageStat).filter_by(contact=contact)
         return [(history_row.contact, history_row.direction, history_row.message, history_row.date)
                 for history_row in query.all()]
-
-
-if __name__ == '__main__':
-    test_bd = ClientDB('test1')
-    for item in ['test3', 'test3', 'test5']:
-        test_bd.add_contact(item)
-    test_bd.add_contact('test2')
-    test_bd.add_users(['test2', 'test3', 'test4', 'test5', 'test10'])
-    test_bd.save_message('test1', 'test2',
-                         f'Проверка... Тестовое сообщение от {datetime.now().strftime("%m-%d-%Y, %H:%M")}')
-    test_bd.save_message('test2', 'test1',
-                         f'Проверка № 2... Тестовое сообщение от {datetime.now().strftime("%m-%d-%Y, %H:%M")}')
-
-    print(test_bd.get_contacts())
-    print(test_bd.get_users())
-    print(test_bd.check_user('шпион'))
-    print(test_bd.check_user('test2'))
-    print(sorted(test_bd.get_history('test2'), key=lambda item: item[3]))
-    print('--------------------------------')
-    pprint(test_bd.get_history('test2'))
-    pprint(test_bd.get_history('test3'))
-    test_bd.del_contact('test3')
-    print(test_bd.get_contacts())

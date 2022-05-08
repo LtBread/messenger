@@ -1,19 +1,12 @@
 import os
 import sys
 import argparse
-import select
-import threading
 import configparser
-from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
-from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 
 from common.variables import *
-from common.utils import get_message, send_message
 from common.decorators import log
-from common.descriptors import Port
-from common.metaclasses import ServerVerifier
 from server.core import MessageProcessor
 from server.server_database import ServerDB
 from server.main_window import MainWindow
@@ -93,10 +86,8 @@ def main():
         server_app = QApplication(sys.argv)
         server_app.setAttribute(Qt.AA_DisableWindowContextHelpButton)
         main_window = MainWindow(database, server, config)
-
         # запуск GUI
         server_app.exec_()
-
         # По закрытию окон останавливаем обработчик сообщений
         server.running = False
 

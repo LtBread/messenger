@@ -1,18 +1,17 @@
 import os
 import sys
-from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 import json
 import select
 import hmac
 import binascii
 import threading
-import logging
+from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 
-from common.metaclasses import ServerVerifier
 from common.descriptors import Port
 from common.variables import *
 from common.utils import send_message, get_message
 from common.decorators import login_required
+
 
 sys.path.append('../')
 
@@ -27,6 +26,7 @@ class MessageProcessor(threading.Thread):
     port = Port()
 
     def __init__(self, listen_address, listen_port, database):
+        """ Параметры подключения """
         super().__init__()
         self.addr = listen_address
         self.port = listen_port
@@ -73,7 +73,9 @@ class MessageProcessor(threading.Thread):
                         self.remove_client(client_with_message)
 
     def remove_client(self, client):
-        """ Метод-обработчик клиента, с которым прервана связь """
+        """ Обработчик клиента, с которым прервана связь
+        Ищет клиента и удаляет его из списков и БД
+        """
         logger.info(f'Клиент {client.getpeername()} отключился от сервера')
         for name in self.names:
             if self.names[name] == client:
@@ -102,8 +104,7 @@ class MessageProcessor(threading.Thread):
         self.sock.listen(MAX_CONNECTIONS)
 
     def process_message(self, message):
-        """
-        Функция адресной отправки сообщения определённому клиенту. Принимает сообщение-словарь,
+        """ Метод адресной отправки сообщения определённому клиенту. Принимает сообщение-словарь,
         список зарегистрированных пользователей и слушающие сокеты. Ничего не возвращает
         """
         if message[DESTINATION] in self.names and self.names[message[DESTINATION]] in self.listen_sockets:
@@ -121,8 +122,7 @@ class MessageProcessor(threading.Thread):
 
     @login_required
     def process_client_message(self, message, client):
-        """
-        Обрабатывает сообщения от клиентов, принимает словарь, проверяет,
+        """ Обрабатывает сообщения от клиентов, принимает словарь, проверяет,
         отправляет словарь-ответ в случае необходимости
         """
         logger.debug(f'Разбор сообщения от клиента: {message}')
@@ -244,7 +244,9 @@ class MessageProcessor(threading.Thread):
                 self.remove_client(client)
 
     def autorize_user(self, message, sock):
-        """ Метод, реализующий авторизацию пользователей """
+        """ Метод, реализующий авторизацию пользователей
+        Если имя пользователя уже занято то возвращаем 400
+        """
         logger.debug(f'Start auth process for {message[USER]}')
         if message[USER][ACCOUNT_NAME] in self.names.keys():
             response = RESPONSE_400
@@ -319,7 +321,7 @@ class MessageProcessor(threading.Thread):
                 sock.close()
 
     def service_update_lists(self):
-        """ Метод реализации отправки сервисного общения 205 клиентам """
+        """ Метод, реализующий отправку сервисного общения 205 клиентам """
         for client in self.names:
             try:
                 send_message(self.names[client], RESPONSE_205)

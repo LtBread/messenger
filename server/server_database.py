@@ -3,8 +3,6 @@ from sqlalchemy.orm import mapper, sessionmaker
 from datetime import datetime
 from pprint import pprint
 
-from common.variables import *
-
 
 class ServerDB:
     """ Класс серверной БД
@@ -12,8 +10,8 @@ class ServerDB:
     Использует SQLite базу данных, реализован с помощью
     SQLAlchemy ORM и используется классический подход
     """
-
     class AllUsers:
+        """ Класс - отображение таблицы всех пользователей """
         def __init__(self, username, passwd_hash):
             self.id = None
             self.username = username
@@ -22,6 +20,7 @@ class ServerDB:
             self.last_login = datetime.now()
 
     class ActiveUsers:
+        """ Класс - отображение таблицы активных пользователей """
         def __init__(self, user_id, ip_address, port, login_time):
             self.id = None
             self.user_id = user_id
@@ -30,6 +29,7 @@ class ServerDB:
             self.login_time = login_time
 
     class LoginHistory:
+        """ Класс - отображение таблицы истории входов """
         def __init__(self, user_id, ip_address, port, date_time):
             self.id = None
             self.user_id = user_id
@@ -38,12 +38,14 @@ class ServerDB:
             self.date_time = date_time
 
     class UsersContacts:
+        """ Класс - отображение таблицы контактов пользователей """
         def __init__(self, user_id, contact):
             self.id = None
             self.user_id = user_id
             self.contact = contact
 
     class UsersHistory:
+        """ Класс - отображение таблицы истории действий пользователей """
         def __init__(self, user_id):
             self.id = None
             self.user_id = user_id
@@ -54,7 +56,6 @@ class ServerDB:
         """ Движок базы данных SERVER_DATABASE - sqlite3:///server_database.db3
         echo = False - отключает вывод на экран sql-запросов
         poll_recycle - устанавливает время простоя БД в секундах
-
         """
         print(path)
         self.database_engine = create_engine(f'sqlite:///{path}',
@@ -119,7 +120,7 @@ class ServerDB:
         self.session.commit()
 
     def user_login(self, username, ip_address, port, key):
-        """ Функция записи в базу факта входа пользователя """
+        """ Метод записи в базу факта входа пользователя """
         print(username, ip_address, port)
 
         # запрос в базу на наличие пользователя с таким именем
@@ -159,7 +160,7 @@ class ServerDB:
         self.session.commit()
 
     def remove_user(self, username):
-        """ Метод удаляющий пользователя из базы """
+        """ Метод, удаляющий пользователя из базы """
         user = self.session.query(self.AllUsers).filter_by(username=username).first()
         self.session.query(self.ActiveUsers).filter_by(user_id=user.id).delete()
         self.session.query(self.LoginHistory).filter_by(user_id=user.id).delete()
@@ -187,13 +188,13 @@ class ServerDB:
             return False
 
     def user_logout(self, username):
-        """ Функция записи в базу факта выхода пользователя """
+        """ Метод записи в базу факта выхода пользователя """
         user = self.session.query(self.AllUsers).filter_by(username=username).first()  # запрос
         self.session.query(self.ActiveUsers).filter_by(user_id=user.id).delete()  # удаление
         self.session.commit()
 
     def process_message(self, sender, recipient):
-        """ Функция фиксации передачи сообщения в БД """
+        """ Метод фиксации передачи сообщения в БД """
         sender = self.session.query(self.AllUsers).filter_by(username=sender).first().id  # id отправителя
         recipient = self.session.query(self.AllUsers).filter_by(username=recipient).first().id  # id получателя
         sender_row = self.session.query(self.UsersHistory).filter_by(user_id=sender).first()
@@ -203,7 +204,7 @@ class ServerDB:
         self.session.commit()
 
     def add_contact(self, user, contact):
-        """ Функция добавления контакта для пользователя """
+        """ Метод добавления контакта для пользователя """
         user = self.session.query(self.AllUsers).filter_by(username=user).first()
         contact = self.session.query(self.AllUsers).filter_by(username=contact).first()
         # Проверяем что не дубль и что контакт может существовать (полю пользователь мы доверяем)
@@ -215,7 +216,7 @@ class ServerDB:
         self.session.commit()
 
     def remove_contact(self, user, contact):
-        """ Функция удаления контакта из БД """
+        """ Метод удаления контакта из БД """
         user = self.session.query(self.AllUsers).filter_by(username=user).first()
         contact = self.session.query(self.AllUsers).filter_by(username=contact).first()
         # Проверяем что контакт может существовать (полю пользователь мы доверяем)
@@ -235,7 +236,7 @@ class ServerDB:
         return query.all()
 
     def active_users_list(self):
-        """ Метод возвращающий список активных пользователей """
+        """ Метод, возвращающий список активных пользователей """
         # Запрашиваем соединение таблиц и собираем кортежи: имя, адрес, порт, время
         query = self.session.query(
             self.AllUsers.username,
@@ -260,7 +261,7 @@ class ServerDB:
         return query.all()
 
     def get_contacts(self, username):
-        """ Функция, возвращающая список контактов пользователя """
+        """ Метод, возвращающий список контактов пользователя """
         # Запрашиваем указанного пользователя
         user = self.session.query(self.AllUsers).filter_by(username=username).one()
         # Запрашиваем его список контактов
@@ -272,7 +273,7 @@ class ServerDB:
         return [contact[1] for contact in query.all()]
 
     def message_history(self):
-        """ Функция, возвращающая количество переданных и полученных сообщений """
+        """ Метод, возвращающий количество переданных и полученных сообщений """
         query = self.session.query(
             self.AllUsers.username,
             self.AllUsers.last_login,
@@ -282,7 +283,6 @@ class ServerDB:
         return query.all()
 
 
-# Отладка ПОЛОМАНА
 if __name__ == '__main__':
     test_db = ServerDB('../server_database.db3')
     test_db.user_login('client1', '192.168.1.4', 7777, 123456)
@@ -290,25 +290,5 @@ if __name__ == '__main__':
 
     print('---------Отладка----------------')
     pprint(test_db.users_list())
-    pprint(test_db.active_users_list())
-
-    test_db.user_logout('client1')
-
-    pprint(test_db.active_users_list())
-    pprint(test_db.login_history('client1'))
-
-    test_db.add_contact('client2', 'client1')
-    test_db.add_contact('client2', 'client3')
-    test_db.add_contact('client2', 'abrakadabra')
-    # test_db.add_contact('abrakadabra', 'client2')
-
-    pprint(test_db.get_contacts('client2'))
-
-    test_db.remove_contact('client2', 'client3')
-
-    pprint(test_db.get_contacts('client2'))
-
-    test_db.user_login('client1', '192.168.1.4', 7776)
-
-    pprint(test_db.active_users_list())
-    # test_db.process_massage('client1', 'client2')
+    test_db.process_message('client1', 'client2')
+    print(test_db.message_history())

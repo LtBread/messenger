@@ -1,8 +1,7 @@
 import sys
 import socket
 import logging
-import logs.config_server_log
-import logs.config_client_log
+
 
 sys.path.append('../')
 

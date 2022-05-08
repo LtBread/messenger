@@ -1,8 +1,5 @@
 import os
-import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QTableView, \
-    QDialog, QPushButton, QLineEdit, QFileDialog, QMessageBox
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5.QtWidgets import QLabel, QDialog, QPushButton, QLineEdit, QFileDialog, QMessageBox
 from PyQt5.QtCore import Qt
 
 
@@ -15,7 +12,7 @@ class ConfigWindow(QDialog):
         self.initUI()
 
     def initUI(self):
-        # настройки окна
+        """ Настройки окна """
         self.setFixedSize(800, 600)
         self.setWindowTitle('Настройки сервера')
         self.setAttribute(Qt.WA_DeleteOnClose)
@@ -90,8 +87,8 @@ class ConfigWindow(QDialog):
         self.ip.insert(self.config['SETTINGS']['listen_address'])
         self.save_btn.clicked.connect(self.save_server_config)
 
-    # функция обработки октрытия окна выбора папки
     def open_file_dialog(self):
+        """ Обработчик открытия окна выбора папки """
         global dialog
         dialog = QFileDialog(self)
         path = dialog.getExistingDirectory()
@@ -100,10 +97,10 @@ class ConfigWindow(QDialog):
         self.db_path.insert(path)
 
     def save_server_config(self):
-        """  Метод сохранения настроек
-        Проверяет правильность введённых данных и если всё правильно сохраняет ini файл.
+        """ Сохраняет настройки
+        Проверяет правильность введённых данных и если всё правильно сохраняет ini файл
         """
-        # global config_window
+        global config_window
         message = QMessageBox()
         self.config['SETTINGS']['database_path'] = self.db_path.text()
         self.config['SETTINGS']['database_file'] = self.db_file.text()
