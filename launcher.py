@@ -15,7 +15,7 @@ def main():
         elif action == 's':
             process.append(
                 subprocess.Popen(
-                    'python server.py',
+                    'python server_main.py',
                     creationflags=subprocess.CREATE_NEW_CONSOLE))
         elif action == 'k':
             print('Убедитесь, что на сервере зарегистрировано необходимое количество клиентов с паролем 123456')
@@ -24,7 +24,7 @@ def main():
             for client in range(clients_count):
                 process.append(
                     subprocess.Popen(
-                        f'python client.py -n test{client + 1} -p 123456',
+                        f'python client_main.py -n test{client + 1} -p 123456',
                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
         elif action == 'x':

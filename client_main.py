@@ -37,7 +37,9 @@ def arg_parser():
     return server_address, server_port, client_name, client_passwd
 
 
-if __name__ == '__main__':
+@log
+def main():
+    """ Основная функция работы клиента """
     server_address, server_port, client_name, client_passwd = arg_parser()
 
     client_app = QApplication(sys.argv)
@@ -103,3 +105,7 @@ if __name__ == '__main__':
     # Раз графическая оболочка закрылась, закрываем транспорт
     transport.transport_shutdown()
     transport.join()
+
+
+if __name__ == '__main__':
+    main()
