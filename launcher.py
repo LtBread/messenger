@@ -6,8 +6,8 @@ def main():
     process = []
     while True:
         action = input('Выберете действие: q - выход, '
-                       's - запустить сервер и клиенты, '
-                       'l - запустить клиенты, '
+                       's - запустить сервер, '
+                       'k - запустить клиенты, '
                        'x - закрыть все окна: ')
 
         if action == 'q':
@@ -15,7 +15,7 @@ def main():
         elif action == 's':
             process.append(
                 subprocess.Popen(
-                    'python server_main.py',
+                    'python server_dist/server/server_main.py',
                     creationflags=subprocess.CREATE_NEW_CONSOLE))
         elif action == 'k':
             print('Убедитесь, что на сервере зарегистрировано необходимое количество клиентов с паролем 123456')
@@ -24,7 +24,7 @@ def main():
             for client in range(clients_count):
                 process.append(
                     subprocess.Popen(
-                        f'python client_main.py -n test{client + 1} -p 123456',
+                        f'python client_dist.client.client_main.py -n test{client + 1} -p 123456',
                         creationflags=subprocess.CREATE_NEW_CONSOLE))
 
         elif action == 'x':

@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QDialog, QLabel, QComboBox, QPushButton, QApplication
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
 
 class DelUserDialog(QDialog):
@@ -48,3 +49,18 @@ class DelUserDialog(QDialog):
         # Рассылаем клиентам сообщение о необходимости обновить справочники
         self.server.service_update_lists()
         self.close()
+
+
+if __name__ == '__main__':
+    app = QApplication([])
+    from server_database import ServerDB
+    database = ServerDB('../../../server_database.db3')
+    import os
+    import sys
+    path = os.path.join(os.getcwd(), '../../..')
+    sys.path.insert(0, path)
+    from core import MessageProcessor
+    server = MessageProcessor('127.0.0.1', 7777, database)
+    dial = DelUserDialog(database, server)
+    dial.show()
+    app.exec_()

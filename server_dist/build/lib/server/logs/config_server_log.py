@@ -1,8 +1,9 @@
 import os
 import sys
 import logging.handlers
-from ..common.variables import LOGGING_LEVEL, ENCODING
+from client_dist.client.common.variables import LOGGING_LEVEL, ENCODING
 
+sys.path.append('../')
 
 # создание формирователя логов (formatter)
 SERVER_FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(filename)s %(message)s')
@@ -23,3 +24,10 @@ LOGGER = logging.getLogger('server')
 LOGGER.addHandler(STREAM_HANDLER)
 LOGGER.addHandler(LOG_FILE)
 LOGGER.setLevel(LOGGING_LEVEL)
+
+# отладка
+if __name__ == '__main__':
+    LOGGER.critical('Критическая ошибка')
+    LOGGER.error('Ошибка')
+    LOGGER.debug('Отладочная информация')
+    LOGGER.info('Информационное сообщение')

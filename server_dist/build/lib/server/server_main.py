@@ -1,13 +1,11 @@
 import os
 import sys
 import argparse
-import logging
 import configparser
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 
-from server_dist.server.common.variables import DEFAULT_PORT
-from server_dist.server.common.decorators import log
+from client_dist.client.common.decorators import log
 from server_dist.server.server.core import MessageProcessor
 from server_dist.server.server.server_database import ServerDB
 from server_dist.server.server.main_window import MainWindow

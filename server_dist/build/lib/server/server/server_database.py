@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Text, DateTime, ForeignKey
 from sqlalchemy.orm import mapper, sessionmaker
 from datetime import datetime
+from pprint import pprint
 
 
 class ServerDB:
@@ -280,3 +281,14 @@ class ServerDB:
             self.UsersHistory.accepted
         ).join(self.AllUsers)
         return query.all()
+
+
+if __name__ == '__main__':
+    test_db = ServerDB('../../../server_database.db3')
+    test_db.user_login('client', '192.168.1.4', 7777, 123456)
+    test_db.user_login('client2', '192.168.1.5', 7778, 123456)
+
+    print('---------Отладка----------------')
+    pprint(test_db.users_list())
+    test_db.process_message('client', 'client2')
+    print(test_db.message_history())
